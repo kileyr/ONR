@@ -3,5 +3,16 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ONR">
+    <Application.Resources>
+        <Style x:Key="disabled_btn" TargetType="Button">
+            <Setter Property="Foreground" Value="#D3D3D3"></Setter>
+            <Setter Property="Background" Value="#496B73"></Setter>
+            <Setter Property="Opacity" Value="0.7"></Setter>
+        </Style>
+        <Style x:Key="enabled_btn" TargetType="Button">
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Background" Value="#496B73"></Setter>
+        </Style>
+    </Application.Resources>
 
 </Application>

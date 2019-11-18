@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -33,9 +35,11 @@ namespace ONR
     /// </summary>
     public sealed partial class BatchHome : Page
     {
+        public Batch selected_batch;
         public BatchHome()
         {
             this.InitializeComponent();
+            this.selected_batch = null;
 
         }
 
@@ -50,6 +54,12 @@ namespace ONR
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+
+            // buttons not enabled to start
+            add_panel_btn.IsEnabled = false;
+            rec_data_btn.IsEnabled = false;
+            add_panel_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
+            rec_data_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
 
             // Instead of hard coded items, the data will be pulled from DB
             Batches.Add(new Batch("DW#5", "02/02/2019"));
@@ -75,6 +85,26 @@ namespace ONR
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void BatchPanel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Batch batch = BatchPanel.SelectedItem as Batch;
+            if (batch != null)
+            {
+                this.selected_batch = batch;
+                add_panel_btn.IsEnabled = true;
+                rec_data_btn.IsEnabled = true;
+                add_panel_btn.Style = (Style)Application.Current.Resources["enabled_btn"];
+                rec_data_btn.Style = (Style)Application.Current.Resources["enabled_btn"];
+            }
+            else
+            {
+                add_panel_btn.IsEnabled = false;
+                rec_data_btn.IsEnabled = false;
+                add_panel_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
+                rec_data_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
+            }
         }
     }
 }
