@@ -72,9 +72,22 @@ namespace ONR
             Batches.Add(new Batch("TS#3", "03/05/2017"));
             Batches.Add(new Batch("TP#6", "06/21/2013"));
         }
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        private void nav_to_FieldDay(object sender, RoutedEventArgs e)
         {
-        //    this.Frame.Navigate(typeof(AddBatch), name.Text);
+            Debug.WriteLine("To field day");
+            this.Frame.Navigate(typeof(FieldDay), this.selected_batch.batch_name);
+        }
+
+        private void nav_to_FieldDay_menu(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("To field day");
+            this.Frame.Navigate(typeof(FieldDay));
+        }
+
+        private void nav_to_AddPanels(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("To add panels");
+            this.Frame.Navigate(typeof(AddBatch)); //, name.Text);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

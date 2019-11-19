@@ -11,20 +11,25 @@
     </Page.Resources>
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="407*"/>
+            <ColumnDefinition Width="105*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="29*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="56*"/>
                 <RowDefinition Height="259*"/>
                 <RowDefinition Height="113*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="89*"/>
-                <ColumnDefinition Width="742*"/>
-                <ColumnDefinition Width="89*"/>
+                <ColumnDefinition Width="99*"/>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="773*"/>
+                <ColumnDefinition Width="99*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="1"
                Grid.Row="0"
@@ -32,7 +37,7 @@
                FontSize="30"
                TextAlignment="Center"
                VerticalAlignment="Bottom"
-               HorizontalAlignment="Left"
+               HorizontalAlignment="Left" Grid.ColumnSpan="2"
             />
             <ScrollContentPresenter Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,0,88,0"/>
             <ListView Name="BatchPanel" Grid.Column="1" Grid.Row="1" ItemsSource="{x:Bind Batches}" SelectionChanged="BatchPanel_SelectionChanged" Grid.ColumnSpan="3" Margin="0,0,88,0">
@@ -89,7 +94,10 @@
                         Grid.Row="1"
                         Grid.Column="1"
                         VerticalAlignment="Stretch"
-                        Content="Add Panels" Grid.ColumnSpan="2" Margin="0,0,0,77" Grid.RowSpan="2" Width="129" />
+                        HorizontalAlignment="Stretch"
+                        Click="nav_to_AddPanels"
+                        Content="Add Panels" />
+                    <!-- Grid.ColumnSpan="2" Margin="0,0,0,77" Grid.RowSpan="2" Width="129" -->
                     <Button
                         Name="rec_data_btn"
                         Style="{StaticResource disabled_btn}"
@@ -97,11 +105,36 @@
                         Grid.Column="4"
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch"
+                        Click="nav_to_FieldDay"
                         Content="Record Data" />
                 </Grid>
             </Grid>
         </Grid>
-        <Grid VerticalAlignment="Center" Height="60" Background="#011826">
+        <CommandBar Background="#011826" Foreground="White" Height="76" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <CommandBar.Resources>
+                <SolidColorBrush x:Key="AppBarButtonForegroundPointerOver" Color="#C1D4D9"/>
+                <SolidColorBrush x:Key="AppBarButtonBackgroundPointerOver" Color="#707070" />
+                <SolidColorBrush x:Key="AppBarButtonForegroundPressed" Color="#C1D4D9"/>
+                <SolidColorBrush x:Key="AppBarButtonBackgroundPressed" Color="#707070" />
+                <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPointerOver" Color="#C1D4D9" />
+                <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPressed" Color="#C1D4D9" />
+            </CommandBar.Resources>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Batches"/>
+                <AppBarButton Label="Add Field Day" Click="nav_to_FieldDay_menu"/>
+            </CommandBar.SecondaryCommands>
+            <CommandBar.Content>
+                <TextBlock Grid.Column="0"
+               Grid.Row="0"
+               Text="  ONR"
+               Foreground="White"
+               FontSize="28"
+               TextAlignment="Center"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"/>
+            </CommandBar.Content>
+        </CommandBar>
+        <!--<Grid VerticalAlignment="Center" Height="60" Background="#011826">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="7*"/>
                 <ColumnDefinition Width="57*"/>
@@ -115,50 +148,6 @@
                TextAlignment="Center"
                VerticalAlignment="Center"
             />
-        </Grid>
+        </Grid> -->
     </Grid>
-
-    <!--<Grid>
-        <ListView Name="BatchPanel" ItemsSource="{x:Bind Batches}">
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                    <Setter Property="Padding" Value="0" />
-                </Style>
-            </ListView.ItemContainerStyle>
-            <ListView.Resources>
-                <SolidColorBrush x:Key="ListViewItemBackground" Color="#F0F0F0" />
-                <SolidColorBrush x:Key="ListViewItemBackgroundSelectedPointerOver" Color="#A4B5BA" />
-                <SolidColorBrush x:Key="ListViewItemBackgroundPressed" Color="#C1D4D9" />
-                <SolidColorBrush x:Key="ListViewItemBackgroundSelected" Color="#C1D4D9" />
-                <SolidColorBrush x:Key="ListViewItemBackgroundSelectedPressed" Color="#C1D4D9" />
-                <SolidColorBrush x:Key="ListViewItemBackgroundPointerOver" Color="#D3D3D3" />
-            </ListView.Resources>
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="local:Batch">
-                    <Border BorderBrush="Black" Margin="-12,5,0,1" BorderThickness="0,0,0,1" >
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Column="0" Text="{x:Bind batch_name}" Margin="12,6,0,0" 
-                    Style="{ThemeResource BaseTextBlockStyle}"/>
-                            <TextBlock  Grid.Column="0" Grid.Row="1" Text="{x:Bind date_added}" Margin="12,0,0,6" 
-                    Style="{ThemeResource BodyTextBlockStyle}"/>
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-        </ListView> -->
-    <!-- <TextBlock x:Name="pageTitle" Text="Batches" />
-        <StackPanel>
-            <TextBlock HorizontalAlignment="Center" Text="Batch Name" />
-            <TextBox HorizontalAlignment="Center" Width="200" Name="name"/>
-            <HyperlinkButton Content="Add Batch"
-                         Click="HyperlinkButton_Click"
-                         HorizontalAlignment="Center"/>
-        </StackPanel> 
-    </Grid> -->
 </Page>
