@@ -125,6 +125,9 @@
     <Compile Include="AddBatch.xaml.cs">
       <DependentUpon>AddBatch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RecordHome.xaml.cs">
+      <DependentUpon>RecordHome.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FieldDay.xaml.cs">
       <DependentUpon>FieldDay.xaml</DependentUpon>
     </Compile>
@@ -158,6 +161,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddBatch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecordHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

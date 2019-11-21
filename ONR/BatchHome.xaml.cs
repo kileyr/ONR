@@ -74,6 +74,7 @@ namespace ONR
         }
         private void nav_to_FieldDay(object sender, RoutedEventArgs e)
         {
+            // if field day not in table do field day page else do recordPage
             Debug.WriteLine("To field day");
             this.Frame.Navigate(typeof(FieldDay), this.selected_batch.batch_name);
         }

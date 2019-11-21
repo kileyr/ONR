@@ -10,18 +10,19 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="125*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="511*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="29*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+        <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="56*"/>
-                <RowDefinition Height="259*"/>
-                <RowDefinition Height="113*"/>
+                <RowDefinition Height="76*"/>
+                <RowDefinition Height="220*"/>
+                <RowDefinition Height="131*"/>
+                <RowDefinition Height="153*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="99*"/>
@@ -37,22 +38,48 @@
                HorizontalAlignment="Left"/>
             <Grid Grid.Column="1" Grid.Row="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="32*"/>
-                    <RowDefinition Height="28*"/>
-                    <RowDefinition Height="22*"/>
-                    <RowDefinition Height="28*"/>
-                    <RowDefinition Height="22*"/>
-                    <RowDefinition Height="28*"/>
-                    <RowDefinition Height="195*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="40*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="55*"/>
-                    <ColumnDefinition Width="122*"/>
-                    <ColumnDefinition Width="231*"/>
+                    <ColumnDefinition Width="53*"/>
+                    <ColumnDefinition Width="354*"/>
                 </Grid.ColumnDefinitions>
+                <TextBlock Text="Batch Name" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Text="Recorder" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Text="Observer" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox Name="batch_box" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="300">
+                    <TextBox.Resources>
+                        <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                        <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                        <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox Name="rec_box" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="300">
+                    <TextBox.Resources>
+                        <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                        <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                        <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox Name="obs_box" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="300">
+                    <TextBox.Resources>
+                        <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                        <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                        <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                    </TextBox.Resources>
+                </TextBox>
+
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="16*"/>
+                    <RowDefinition Height="111*"/>
+                </Grid.RowDefinitions>
             </Grid>
         </Grid>
-        <CommandBar Background="#011826" Foreground="White" Height="76" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <CommandBar Background="#011826" Foreground="White" Height="76" Grid.RowSpan="2" DefaultLabelPosition="Right">
             <CommandBar.Resources>
                 <SolidColorBrush x:Key="AppBarButtonForegroundPointerOver" Color="#C1D4D9"/>
                 <SolidColorBrush x:Key="AppBarButtonBackgroundPointerOver" Color="#707070" />
@@ -61,10 +88,10 @@
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPointerOver" Color="#C1D4D9" />
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPressed" Color="#C1D4D9" />
             </CommandBar.Resources>
-            <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save"/>
+            <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save" Click="save_and_nav_to_record"/>
             <CommandBar.SecondaryCommands>
-                <AppBarButton Label="Batches"/>
-                <AppBarButton Label="Add Field Day"/>
+                <AppBarButton Label="Batches" Click="nav_to_BatchHome"/>
+                <AppBarButton Label="Record Data"/>
             </CommandBar.SecondaryCommands>
             <CommandBar.Content>
                 <TextBlock Grid.Column="0"

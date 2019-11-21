@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="ONR.RecordHome"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ONR"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="511*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="76*"/>
+                <RowDefinition Height="220*"/>
+                <RowDefinition Height="131*"/>
+                <RowDefinition Height="153*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="99*"/>
+                <ColumnDefinition Width="773*"/>
+                <ColumnDefinition Width="99*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1"
+               Name ="RecordTitle"
+               Grid.Row="0"
+               FontSize="30"
+               TextAlignment="Center"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Left"/>
+            <TextBlock Grid.Column="1"
+               Grid.Row="1"
+               FontSize="45"
+               Text="Select Data Type to Record"
+               TextAlignment="Center"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Center"
+               Foreground="#D3D3D3"/>
+        </Grid>
+        <CommandBar Background="#011826" Foreground="White" Height="76" Grid.RowSpan="2" DefaultLabelPosition="Right">
+            <CommandBar.Resources>
+                <SolidColorBrush x:Key="AppBarButtonForegroundPointerOver" Color="#C1D4D9"/>
+                <SolidColorBrush x:Key="AppBarButtonBackgroundPointerOver" Color="#707070" />
+                <SolidColorBrush x:Key="AppBarButtonForegroundPressed" Color="#C1D4D9"/>
+                <SolidColorBrush x:Key="AppBarButtonBackgroundPressed" Color="#707070" />
+                <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPointerOver" Color="#C1D4D9" />
+                <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPressed" Color="#C1D4D9" />
+            </CommandBar.Resources>
+            <AppBarButton Icon ="Edit" IsCompact="false" Foreground="White" Label="Fouling"/>
+            <AppBarButton Icon ="Edit" IsCompact="false" Foreground="White" Label="Water Jet"/>
+            <AppBarButton Icon ="Edit" IsCompact="false" Foreground="White" Label="Push"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Batches" Click="nav_to_BatchHome"/>
+                <AppBarButton Label="Record Data"/>
+            </CommandBar.SecondaryCommands>
+            <CommandBar.Content>
+                <TextBlock Grid.Column="0"
+               Grid.Row="0"
+               Text="  ONR"
+               Foreground="White"
+               FontSize="28"
+               TextAlignment="Center"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"/>
+            </CommandBar.Content>
+        </CommandBar>
+    </Grid>
+</Page>
