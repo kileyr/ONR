@@ -125,6 +125,15 @@
     <Compile Include="AddBatch.xaml.cs">
       <DependentUpon>AddBatch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FoulingPanels.xaml.cs">
+      <DependentUpon>FoulingPanels.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WJPanels.xaml.cs">
+      <DependentUpon>WJPanels.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PushPanels.xaml.cs">
+      <DependentUpon>PushPanels.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RecordHome.xaml.cs">
       <DependentUpon>RecordHome.xaml</DependentUpon>
     </Compile>
@@ -161,6 +170,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddBatch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FoulingPanels.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WJPanels.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PushPanels.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

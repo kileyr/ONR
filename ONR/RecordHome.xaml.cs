@@ -47,5 +47,23 @@ namespace ONR
             Debug.WriteLine("To batch home");
             this.Frame.Navigate(typeof(BatchHome));
         }
+
+        private void to_fouling(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("To fouling");
+            this.Frame.Navigate(typeof(FoulingPanels), this.batch_name);
+        }
+
+        private void to_waterjet(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("To waterjet");
+            this.Frame.Navigate(typeof(WJPanels), this.batch_name);
+        }
+
+        private void to_push(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("To push");
+            this.Frame.Navigate(typeof(PushPanels), this.batch_name);
+        }
     }
 }

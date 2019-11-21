@@ -54,9 +54,9 @@
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPointerOver" Color="#C1D4D9" />
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPressed" Color="#C1D4D9" />
             </CommandBar.Resources>
-            <AppBarButton Icon ="Edit" IsCompact="false" Foreground="White" Label="Fouling"/>
-            <AppBarButton Icon ="Edit" IsCompact="false" Foreground="White" Label="Water Jet"/>
-            <AppBarButton Icon ="Edit" IsCompact="false" Foreground="White" Label="Push"/>
+            <AppBarButton Icon ="Edit" Click="to_fouling" IsCompact="false" Foreground="White" Label="Fouling"/>
+            <AppBarButton Icon ="Edit" Click="to_waterjet" IsCompact="false" Foreground="White" Label="Water Jet"/>
+            <AppBarButton Icon ="Edit" Click="to_push" IsCompact="false" Foreground="White" Label="Push"/>
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="Batches" Click="nav_to_BatchHome"/>
                 <AppBarButton Label="Record Data"/>
