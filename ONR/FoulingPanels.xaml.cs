@@ -52,7 +52,7 @@ namespace ONR
             if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
             {
                 this.batch_name = e.Parameter.ToString();
-                foulingTitle.Text = $"{e.Parameter.ToString()} {field_date} - Fouling";
+                foulingTitle.Text = $"{e.Parameter.ToString()} {field_date} - Fouling Panels";
             }
             fouling_panels.Add(new PanelFouling("1234"));
             fouling_panels.Add(new PanelFouling("1235"));

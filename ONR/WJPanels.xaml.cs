@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,15 +19,30 @@ using Windows.UI.Xaml.Navigation;
 
 namespace ONR
 {
+    public class PanelWJ
+    {
+        public string panel_id;
+        public PanelWJ(string id)
+        {
+            this.panel_id = id;
+        }
+    }
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class WJPanels : Page
     {
         public string batch_name;
+        private ObservableCollection<PanelWJ> _wjPanels = new ObservableCollection<PanelWJ>();
+
         public WJPanels()
         {
             this.InitializeComponent();
+        }
+
+        public ObservableCollection<PanelWJ> wj_panels
+        {
+            get { return this._wjPanels; }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -36,8 +52,14 @@ namespace ONR
             if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
             {
                 this.batch_name = e.Parameter.ToString();
-                WJTitle.Text = $"{e.Parameter.ToString()} {field_date} - Water Jet";
+                WJTitle.Text = $"{e.Parameter.ToString()} {field_date} - Water Jet Panels";
             }
+
+            wj_panels.Add(new PanelWJ("1234"));
+            wj_panels.Add(new PanelWJ("1235"));
+            wj_panels.Add(new PanelWJ("1236"));
+            wj_panels.Add(new PanelWJ("1237"));
+            wj_panels.Add(new PanelWJ("1238"));
             base.OnNavigatedTo(e);
         }
 

@@ -33,11 +33,12 @@
                HorizontalAlignment="Left"
             />
             <ScrollContentPresenter Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-            <ListView Name="BatchPanel" Grid.Column="1" Grid.Row="1" ItemsSource="{x:Bind fouling_panels}"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <ListView Name="FoulingPanel" Grid.Column="1" Grid.Row="1" ItemsSource="{x:Bind fouling_panels}"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                        <Setter Property="Padding" Value="0" />
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
                     </Style>
                 </ListView.ItemContainerStyle>
                 <ListView.Resources>
@@ -50,11 +51,14 @@
                 </ListView.Resources>
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:PanelFouling">
-                        <Border BorderBrush="Black" BorderThickness="0,0,0,1" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
-                            <Grid>
-                                <TextBlock Text="{x:Bind panel_id}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                            </Grid>
-                        </Border>
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="82*"/>
+                                <ColumnDefinition Width="82*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{x:Bind panel_id}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <SymbolIcon Grid.Column="1" Name="status_icon" Symbol="Edit" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                        </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
