@@ -76,7 +76,7 @@
             <AppBarButton Icon ="Edit" Click="to_waterjet" IsCompact="false" Foreground="White" Label="Water Jet"/>
             <AppBarButton Icon ="Edit" Click="to_push" IsCompact="false" Foreground="White" Label="Push"/>
             <CommandBar.SecondaryCommands>
-                <AppBarButton Label="Batches"/>
+                <AppBarButton Label="Batches" Click ="nav_to_BatchHome"/>
                 <AppBarButton Label="Add Field Day" />
             </CommandBar.SecondaryCommands>
             <CommandBar.Content>

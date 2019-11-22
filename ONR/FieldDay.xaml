@@ -104,20 +104,5 @@
                VerticalAlignment="Bottom"/>
             </CommandBar.Content>
         </CommandBar>
-        <!--<Grid VerticalAlignment="Center" Height="60" Background="#011826">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="28*"/>
-                <ColumnDefinition Width="205*"/>
-                <ColumnDefinition Width="23*"/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock Grid.Column="0"
-               Text="ONR"
-               Foreground="White"
-               FontSize="28"
-               TextAlignment="Center"
-               VerticalAlignment="Center" Height="37"
-            />
-        </Grid> -->
     </Grid>
 </Page>

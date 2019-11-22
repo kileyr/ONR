@@ -1,0 +1,304 @@
+﻿<Page
+    x:Class="ONR.FoulingDataPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ONR"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="511*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="183*"/>
+                <RowDefinition Height="67*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="99*"/>
+                <ColumnDefinition Width="773*"/>
+                <ColumnDefinition Width="99*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1"
+               Name ="FoulingDataTitle"
+               Grid.Row="0"
+               FontSize="30"
+               Text="WHAT"
+               TextAlignment="Center"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Left"/>
+            <ScrollViewer Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.Resources>
+                        <Style TargetType="Grid">
+                            <Setter Property="Margin" Value="0,10,0,0"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <!--<RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>-->
+                    </Grid.RowDefinitions>
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Barnacle" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                            <StackPanel.Resources>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="Margin" Value="0,0,16,0"/>
+                                </Style>
+                            </StackPanel.Resources>
+                            <TextBox  Name="barn_perc" Header="Barn %" MinWidth="100"/>
+                            <TextBox  Name="barn_num" Header="Barn #" MinWidth="100"/>
+                            <TextBox  Name="barn_size" Header="Barn Size" MinWidth="100"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Barnacle" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                            <StackPanel.Resources>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="Margin" Value="0,0,16,0"/>
+                                </Style>
+                            </StackPanel.Resources>
+                            <TextBox  Name="moll_perc" Header="Barn %" MinWidth="100"/>
+                            <TextBox  Name="moll_num" Header="Barn #" MinWidth="100"/>
+                            <TextBox  Name="moll_size" Header="Barn Size" MinWidth="100"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Barnacle" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                            <StackPanel.Resources>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="Margin" Value="0,0,16,0"/>
+                                </Style>
+                            </StackPanel.Resources>
+                            <TextBox  Name="a_perc" Header="Barn %" MinWidth="100"/>
+                            <TextBox  Name="a_num" Header="Barn #" MinWidth="100"/>
+                            <TextBox  Name="a_size" Header="Barn Size" MinWidth="100"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Barnacle" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                            <StackPanel.Resources>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="Margin" Value="0,0,16,0"/>
+                                </Style>
+                            </StackPanel.Resources>
+                            <TextBox  Name="b_perc" Header="Barn %" MinWidth="100"/>
+                            <TextBox  Name="b_num" Header="Barn #" MinWidth="100"/>
+                            <TextBox  Name="b_size" Header="Barn Size" MinWidth="100"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Barnacle" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                            <StackPanel.Resources>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="Margin" Value="0,0,16,0"/>
+                                </Style>
+                            </StackPanel.Resources>
+                            <TextBox  Name="c_perc" Header="Barn %" MinWidth="100"/>
+                            <TextBox  Name="c_num" Header="Barn #" MinWidth="100"/>
+                            <TextBox  Name="c_size" Header="Barn Size" MinWidth="100"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Barnacle" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                            <StackPanel.Resources>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="Margin" Value="0,0,16,0"/>
+                                </Style>
+                            </StackPanel.Resources>
+                            <TextBox  Name="d_perc" Header="Barn %" MinWidth="100"/>
+                            <TextBox  Name="d_num" Header="Barn #" MinWidth="100"/>
+                            <TextBox  Name="d_size" Header="Barn Size" MinWidth="100"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <!--<Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Molluscs" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Tubeworms" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Bryozoans" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Hydroids" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Anenomes" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Tunicates" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Amphipods" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid> -->
+                    <!--
+                <TextBlock Text="Sponges" Foreground="#496B73" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Text="Aglae" Foreground="#496B73" Grid.Row="9" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Text="Unknown Soft" Foreground="#496B73" Grid.Row="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Text="Incipient" Foreground="#496B73" Grid.Row="11" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Text="Biofilm" Foreground="#496B73" Grid.Row="12" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+-->
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+        <CommandBar Background="#011826" Foreground="White" Height="76" Grid.RowSpan="2" DefaultLabelPosition="Right">
+            <CommandBar.Resources>
+                <SolidColorBrush x:Key="AppBarButtonForegroundPointerOver" Color="#C1D4D9"/>
+                <SolidColorBrush x:Key="AppBarButtonBackgroundPointerOver" Color="#707070" />
+                <SolidColorBrush x:Key="AppBarButtonForegroundPressed" Color="#C1D4D9"/>
+                <SolidColorBrush x:Key="AppBarButtonBackgroundPressed" Color="#707070" />
+                <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPointerOver" Color="#C1D4D9" />
+                <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPressed" Color="#C1D4D9" />
+            </CommandBar.Resources>
+            <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Batches"/>
+                <AppBarButton Label="Record Data"/>
+            </CommandBar.SecondaryCommands>
+            <CommandBar.Content>
+                <TextBlock Grid.Column="0"
+               Grid.Row="0"
+               Text="  ONR"
+               Foreground="White"
+               FontSize="28"
+               TextAlignment="Center"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"/>
+            </CommandBar.Content>
+        </CommandBar>
+    </Grid>
+</Page>

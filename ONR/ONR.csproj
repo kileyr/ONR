@@ -125,6 +125,12 @@
     <Compile Include="AddBatch.xaml.cs">
       <DependentUpon>AddBatch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FoulingDataPage.xaml.cs">
+      <DependentUpon>FoulingDataPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PushDataPage.xaml.cs">
+      <DependentUpon>PushDataPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FoulingPanels.xaml.cs">
       <DependentUpon>FoulingPanels.xaml</DependentUpon>
     </Compile>
@@ -170,6 +176,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddBatch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FoulingDataPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PushDataPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

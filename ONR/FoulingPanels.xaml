@@ -33,7 +33,7 @@
                HorizontalAlignment="Left"
             />
             <ScrollContentPresenter Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-            <ListView Name="FoulingPanel" Grid.Column="1" Grid.Row="1" ItemsSource="{x:Bind fouling_panels}"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <ListView Name="FoulingPanel" Grid.Column="1" Grid.Row="1" SelectionChanged="select_FoulingPanel" ItemsSource="{x:Bind fouling_panels}"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -76,7 +76,7 @@
             <AppBarButton Icon ="Edit" Click="to_waterjet" IsCompact="false" Foreground="White" Label="Water Jet"/>
             <AppBarButton Icon ="Edit" Click="to_push" IsCompact="false" Foreground="White" Label="Push"/>
             <CommandBar.SecondaryCommands>
-                <AppBarButton Label="Batches"/>
+                <AppBarButton Label="Batches" Click ="nav_to_BatchHome"/>
                 <AppBarButton Label="Add Field Day" />
             </CommandBar.SecondaryCommands>
             <CommandBar.Content>

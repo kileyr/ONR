@@ -27,6 +27,17 @@ namespace ONR
             this.panel_id = id;
         }
     }
+
+    public class FoulingDataEntry
+    {
+        public string panel_id;
+        public string batch_name;
+        public FoulingDataEntry(string id, string batch)
+        {
+            this.panel_id = id;
+            this.batch_name = batch;
+        }
+    }
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -84,6 +95,13 @@ namespace ONR
         {
             Debug.WriteLine("To push");
             this.Frame.Navigate(typeof(PushPanels), this.batch_name);
+        }
+
+        private void select_FoulingPanel(object sender, SelectionChangedEventArgs e)
+        {
+            PanelFouling panel = FoulingPanel.SelectedItem as PanelFouling;
+            FoulingDataEntry data = new FoulingDataEntry(panel.panel_id, this.batch_name);
+            this.Frame.Navigate(typeof(FoulingDataPage), data);
         }
     }
 }
