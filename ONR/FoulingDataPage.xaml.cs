@@ -44,5 +44,29 @@ namespace ONR
 
             base.OnNavigatedTo(e);
         }
+
+        private void nav_to_BatchHome(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(BatchHome));
+        }
+
+        private void toggle_total_macro(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch toggleSwitch = sender as ToggleSwitch;
+            if (toggleSwitch != null)
+            {
+                if (toggleSwitch.IsOn == true)
+                {
+                    
+                    total_macro.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                   
+                    total_macro.Visibility = Visibility.Collapsed;
+                }
+            }
+        }
+        
     }
 }

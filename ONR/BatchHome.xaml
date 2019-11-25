@@ -115,7 +115,7 @@
                 <AppBarButton Label="Add Field Day" Click="nav_to_FieldDay_menu"/>
             </CommandBar.SecondaryCommands>
             <CommandBar.Content>
-                <TextBlock Grid.Column="0"
+               <TextBlock Grid.Column="0"
                Grid.Row="0"
                Text="  ONR"
                Foreground="White"
@@ -125,20 +125,5 @@
                VerticalAlignment="Bottom"/>
             </CommandBar.Content>
         </CommandBar>
-        <!--<Grid VerticalAlignment="Center" Height="60" Background="#011826">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="7*"/>
-                <ColumnDefinition Width="57*"/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock Grid.Column="0"
-               Grid.Row="0"
-               Text="ONR"
-               Foreground="White"
-               FontSize="28"
-               TextAlignment="Center"
-               VerticalAlignment="Center"
-            />
-        </Grid> -->
     </Grid>
 </Page>
