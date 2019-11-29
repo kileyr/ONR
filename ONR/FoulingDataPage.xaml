@@ -70,9 +70,27 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="barn_perc" Header="Barn %" MinWidth="100"/>
-                            <TextBox  Name="barn_num" Header="Barn #" MinWidth="100"/>
-                            <TextBox  Name="barn_size" Header="Barn Size" MinWidth="100"/>
+                            <TextBox  Name="barn_perc" Header="Barn %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
+                            <TextBox  Name="barn_num" Header="Barn #" MinWidth="100">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
+                            <TextBox  Name="barn_size" Header="Barn Size" MinWidth="100">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -88,7 +106,13 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="moll_perc" Header="Mol %" MinWidth="100"/>
+                            <TextBox  Name="moll_perc" Header="Mol %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -104,8 +128,20 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="psed_perc" Header="Psed %" MinWidth="100"/>
-                            <TextBox  Name="pcal_perc" Header="Pcal %" MinWidth="100"/>
+                            <TextBox  Name="psed_perc" Header="Psed %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
+                            <TextBox  Name="pcal_perc" Header="Pcal %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -121,9 +157,27 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="eb_perc" Header="EB %" MinWidth="100"/>
-                            <TextBox  Name="wsp_perc" Header="Wsp %" MinWidth="100"/>
-                            <TextBox  Name="br_perc" Header=" BR %" MinWidth="100"/>
+                            <TextBox  Name="eb_perc" Header="EB %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
+                            <TextBox  Name="wsp_perc" Header="Wsp %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
+                            <TextBox  Name="br_perc" Header=" BR %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -139,7 +193,13 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="hyd_perc" Header="Cn %" MinWidth="100"/>
+                            <TextBox  Name="hyd_perc" Header="Cn %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="5" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -155,7 +215,13 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="anen_perc" Header="Cn %" MinWidth="100"/>
+                            <TextBox  Name="anen_perc" Header="Cn %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="6" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -171,8 +237,20 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="tun_ct" Header="Ct %" MinWidth="100"/>
-                            <TextBox  Name="tun_pcal" Header="Pcal %" MinWidth="100"/>
+                            <TextBox  Name="tun_ct" Header="Ct %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
+                            <TextBox  Name="tun_pcal" Header="Pcal %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="7" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -188,7 +266,13 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="amph_cor" Header="Cor %" MinWidth="100"/>
+                            <TextBox  Name="amph_cor" Header="Cor %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="8" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -204,7 +288,13 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="sp_perc" Header="Sp %" MinWidth="100"/>
+                            <TextBox  Name="sp_perc" Header="Sp %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="9" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -220,8 +310,20 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="alg_type" Header="Type" MinWidth="100"/>
-                            <TextBox  Name="alg_pcal" Header="Pcal %" MinWidth="100"/>
+                            <TextBox  Name="alg_type" Header="Type" MinWidth="100">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
+                            <TextBox  Name="alg_pcal" Header="Pcal %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
 
                         </StackPanel>
                     </Grid>
@@ -238,10 +340,16 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="us_perc" Header="US %" MinWidth="100"/>
+                            <TextBox  Name="us_perc" Header="US %" MinWidth="100">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
                         </StackPanel>
                     </Grid>
-                    <Grid Grid.Row="10" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid Grid.Row="11" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="10"/>
@@ -254,10 +362,16 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="if_field" Header="IF" MinWidth="100"/>
+                            <TextBox  Name="if_field" Header="IF" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
                         </StackPanel>
                     </Grid>
-                    <Grid Grid.Row="10" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid Grid.Row="12" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="10"/>
@@ -270,7 +384,13 @@
                                     <Setter Property="Margin" Value="32,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <TextBox  Name="biofilm_si" Header="SI %" MinWidth="100"/>
+                            <TextBox  Name="biofilm_si" Header="SI %" MinWidth="100" TextChanged="update_total_macro">
+                                <TextBox.Resources>
+                                    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                    <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                                </TextBox.Resources>
+                            </TextBox>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -295,7 +415,7 @@
                         </ToggleSwitch.Resources>   
                     </ToggleSwitch>
 
-                    <TextBlock Name="total_macro" Grid.Column="1" FontSize="20" Text="0" VerticalAlignment="Center" Visibility="Collapsed"/>
+                    <TextBlock Name="total_macro" Grid.Column="1" FontSize="20" Text="0.00" VerticalAlignment="Center" Visibility="Collapsed"/>
                 </Grid>    
             </Grid>
         </Grid>
@@ -308,10 +428,10 @@
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPointerOver" Color="#C1D4D9" />
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPressed" Color="#C1D4D9" />
             </CommandBar.Resources>
-            <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save"/>
+            <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save" Click="save_and_exit"/>
+            <AppBarButton Icon="Cancel" IsCompact="false" Foreground="White" Label="Exit" Click="exit"/>
             <CommandBar.SecondaryCommands>
-                <AppBarButton Label="Batches"/>
-                <AppBarButton Label="Record Data"/>
+                <AppBarButton Label="Batches" Click="nav_to_BatchHome"/>
             </CommandBar.SecondaryCommands>
             <CommandBar.Content>
                 <TextBlock Grid.Column="0"
