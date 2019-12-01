@@ -101,7 +101,7 @@
                 </Grid>
             </Grid>
         </Grid>
-        <CommandBar Background="#011826" Foreground="White" Height="76" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <CommandBar Background="#011826" Foreground="White" Height="76" Grid.ColumnSpan="2" Grid.RowSpan="2" DefaultLabelPosition="Right">
             <CommandBar.Resources>
                 <SolidColorBrush x:Key="AppBarButtonForegroundPointerOver" Color="#C1D4D9"/>
                 <SolidColorBrush x:Key="AppBarButtonBackgroundPointerOver" Color="#707070" />
@@ -110,6 +110,7 @@
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPointerOver" Color="#C1D4D9" />
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPressed" Color="#C1D4D9" />
             </CommandBar.Resources>
+            <AppBarButton Icon="Add" IsCompact="false" Foreground="White" Label="Add Batch" Click="new_batch"/>
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="Batches"/>
                 <AppBarButton Label="Add Field Day" Click="nav_to_FieldDay_menu"/>

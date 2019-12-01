@@ -9,6 +9,170 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="511*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="183*"/>
+                <RowDefinition Height="67*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="99*"/>
+                <ColumnDefinition Width="773*"/>
+                <ColumnDefinition Width="99*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1"
+               Name ="PushDataTitle"
+               Grid.Row="0"
+               FontSize="30"
+               Text="WHAT"
+               TextAlignment="Center"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Left"/>
+            <ScrollViewer Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.Resources>
+                        <Style TargetType="Grid">
+                            <Setter Property="Margin" Value="0,10,0,0"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
 
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Coating" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBox  Grid.Row="2"  Name="coating" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
+                            <TextBox.Resources>
+                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                            </TextBox.Resources>
+                        </TextBox>
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Force(N)" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBox  Grid.Row="2"  Name="force" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
+                            <TextBox.Resources>
+                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                            </TextBox.Resources>
+                        </TextBox>
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Length(mm)" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBox  Grid.Row="2"  Name="length" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
+                            <TextBox.Resources>
+                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                            </TextBox.Resources>
+                        </TextBox>
+                    </Grid>
+                    <Grid Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Width(mm)" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBox  Grid.Row="2"  Name="width" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
+                            <TextBox.Resources>
+                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                            </TextBox.Resources>
+                        </TextBox>
+                    </Grid>
+                    <Grid Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="%BPR" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBox  Grid.Row="2"  Name="bpr" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
+                            <TextBox.Resources>
+                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                            </TextBox.Resources>
+                        </TextBox>
+                    </Grid>
+                    <Grid Grid.Row="5" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Notes" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBox  Grid.Row="2"  Name="notes" MinWidth="450" MinHeight="200"  Height="Auto" Width="Auto" HorizontalAlignment="Left">
+                            <TextBox.Resources>
+                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                            </TextBox.Resources>
+                        </TextBox>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+
+        </Grid>
+        <CommandBar Background="#011826" Foreground="White" Height="76" Grid.RowSpan="2" DefaultLabelPosition="Right">
+            <CommandBar.Resources>
+                <SolidColorBrush x:Key="AppBarButtonForegroundPointerOver" Color="#C1D4D9"/>
+                <SolidColorBrush x:Key="AppBarButtonBackgroundPointerOver" Color="#707070" />
+                <SolidColorBrush x:Key="AppBarButtonForegroundPressed" Color="#C1D4D9"/>
+                <SolidColorBrush x:Key="AppBarButtonBackgroundPressed" Color="#707070" />
+                <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPointerOver" Color="#C1D4D9" />
+                <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPressed" Color="#C1D4D9" />
+            </CommandBar.Resources>
+            <AppBarButton Icon="Add" IsCompact="false" Foreground="White" Label="Save and New" Click="save_and_new"/>
+            <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save" Click="save_and_exit"/>
+            <AppBarButton Icon="Cancel" IsCompact="false" Foreground="White" Label="Exit" Click="exit"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Batches" Click="nav_to_BatchHome"/>
+            </CommandBar.SecondaryCommands>
+            <CommandBar.Content>
+                <TextBlock Grid.Column="0"
+               Grid.Row="0"
+               Text="  ONR"
+               Foreground="White"
+               FontSize="28"
+               TextAlignment="Center"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"/>
+            </CommandBar.Content>
+        </CommandBar>
     </Grid>
 </Page>

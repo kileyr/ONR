@@ -27,6 +27,17 @@ namespace ONR
             this.panel_id = id;
         }
     }
+
+    public class PushDataEntry
+    {
+        public string panel_id;
+        public string batch_name;
+        public PushDataEntry(string id, string batch)
+        {
+            this.panel_id = id;
+            this.batch_name = batch;
+        }
+    }
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -85,6 +96,13 @@ namespace ONR
         {
             Debug.WriteLine("To push");
             this.Frame.Navigate(typeof(PushPanels), this.batch_name);
+        }
+
+        private void select_PushPanel(object sender, SelectionChangedEventArgs e)
+        {
+            PanelPush panel = _PushPanels_.SelectedItem as PanelPush;
+            PushDataEntry data = new PushDataEntry(panel.panel_id, this.batch_name);
+            this.Frame.Navigate(typeof(PushDataPage), data);
         }
     }
 }

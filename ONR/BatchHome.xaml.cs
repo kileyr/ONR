@@ -90,14 +90,9 @@ namespace ONR
             this.Frame.Navigate(typeof(AddBatch)); //, name.Text);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void new_batch(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            this.Frame.Navigate(typeof(AddBatch));
         }
 
         private void BatchPanel_SelectionChanged(object sender, SelectionChangedEventArgs e)

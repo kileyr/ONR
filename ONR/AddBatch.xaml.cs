@@ -27,22 +27,28 @@ namespace ONR
             this.InitializeComponent();
         }
 
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+        }
+
+        private void nav_to_BatchHome(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(BatchHome));
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        private void save_and_exit(object sender, RoutedEventArgs e)
         {
-            if(e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
-            {
-                adding.Text = $"Adding {e.Parameter.ToString()}";
-            }
-            else
-            {
-                adding.Text = "Failed to specify batch name.";
-            }
-            base.OnNavigatedTo(e);
+            /**
+             * TODO: Write contents of textBoxes to database here
+             **/
+
+            this.Frame.Navigate(typeof(BatchHome));
+        }
+
+        private void exit(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(BatchHome));
         }
     }
 }

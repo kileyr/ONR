@@ -34,14 +34,13 @@ namespace ONR
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            // write field day title
+            // write fouling title
             string field_date = DateTime.Today.ToString("MM.dd.yyyy");
             if (e.Parameter != null)
             {
                 this.data_entry = (FoulingDataEntry)e.Parameter;
-                string blah = $"{this.data_entry.batch_name} {field_date} - Fouling Panel {this.data_entry.panel_id}";
-                Debug.WriteLine(blah);
-                FoulingDataTitle.Text = blah;
+                string title = $"{this.data_entry.batch_name} {field_date} - Fouling Panel {this.data_entry.panel_id}";
+                FoulingDataTitle.Text = title;
             }
 
             base.OnNavigatedTo(e);
@@ -58,12 +57,12 @@ namespace ONR
              * TODO: Write contents of textBoxes to database here
              **/
              
-            this.Frame.Navigate(typeof(FoulingPanels));
+            this.Frame.Navigate(typeof(FoulingPanels), this.data_entry.batch_name);
         }
 
         private void exit(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(FoulingPanels));
+            this.Frame.Navigate(typeof(FoulingPanels), this.data_entry.batch_name);
         }
 
         private void toggle_total_macro(object sender, RoutedEventArgs e)
