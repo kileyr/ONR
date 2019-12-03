@@ -29,7 +29,7 @@
                Name="foulingTitle"
                FontSize="30"
                TextAlignment="Center"
-               VerticalAlignment="Bottom"
+               VerticalAlignment="Center"
                HorizontalAlignment="Left"
             />
             <ScrollContentPresenter Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>

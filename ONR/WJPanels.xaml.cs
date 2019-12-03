@@ -27,6 +27,35 @@ namespace ONR
             this.panel_id = id;
         }
     }
+
+    public class WJDataEntry
+    {
+        public string panel_id;
+        public string batch_name;
+        public int psi;
+        public WJDataEntry(string id, string batch)
+        { 
+            this.panel_id = id;
+            this.batch_name = batch;
+            this.psi = 0;
+        }
+
+        public void next_psi()
+        {
+            if(this.psi < 120)
+            {
+                this.psi += 40;
+            }
+            else if(this.psi == 120)
+            {
+                this.psi = 180;
+            }
+            else if(this.psi == 180)
+            {
+                this.psi = 240;
+            }
+        }
+    }
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -84,6 +113,13 @@ namespace ONR
         {
             Debug.WriteLine("To push");
             this.Frame.Navigate(typeof(PushPanels), this.batch_name);
+        }
+
+        private void select_WJPanel(object sender, SelectionChangedEventArgs e)
+        {
+            PanelWJ panel = _WJPanels_.SelectedItem as PanelWJ;
+            WJDataEntry data = new WJDataEntry(panel.panel_id, this.batch_name);
+            this.Frame.Navigate(typeof(WJDataPage), data);
         }
     }
 }

@@ -34,7 +34,7 @@
                Grid.Row="0"
                FontSize="30"
                TextAlignment="Center"
-               VerticalAlignment="Bottom"
+               VerticalAlignment="Center"
                HorizontalAlignment="Left"/>
             <Grid Grid.Column="1" Grid.Row="1">
                 <Grid.RowDefinitions>
