@@ -77,7 +77,6 @@
             <AppBarButton Icon ="Edit" Click="to_push" IsCompact="false" Foreground="White" Label="Push"/>
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="Batches" Click ="nav_to_BatchHome"/>
-                <AppBarButton Label="Add Field Day" />
             </CommandBar.SecondaryCommands>
             <CommandBar.Content>
                 <TextBlock Grid.Column="0"

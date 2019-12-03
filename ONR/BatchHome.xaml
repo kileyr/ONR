@@ -65,40 +65,43 @@
                 </ListView.ItemTemplate>
 
             </ListView>
-            <Grid Grid.Column="1" Grid.Row="2">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="31*"/>
-                        <RowDefinition Height="40*"/>
-                        <RowDefinition Height="74*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="225*"/>
-                        <ColumnDefinition Width="130*"/>
-                        <ColumnDefinition Width="69*"/>
-                        <ColumnDefinition Width="68*"/>
-                        <ColumnDefinition Width="130*"/>
-                        <ColumnDefinition Width="225*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+                <Button
                         Name="add_panel_btn"
                         Style="{StaticResource disabled_btn}"
-                        Grid.Row="1"
                         Grid.Column="1"
-                        VerticalAlignment="Stretch"
-                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
                         Click="nav_to_AddPanels"
+                        MinWidth="124"
                         Content="Add Panels" />
-                    <Button
+                <Button
+                        Name="depl_retrv"
+                        Style="{StaticResource disabled_btn}"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="nav_to_DR"
+                        MinWidth="124"
+                        Content="Deploy/Retrieve" />
+                <Button
                         Name="rec_data_btn"
                         Style="{StaticResource disabled_btn}"
-                        Grid.Row="1"
-                        Grid.Column="4"
-                        HorizontalAlignment="Stretch"
-                        VerticalAlignment="Stretch"
+                        Grid.Column="5"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        MinWidth="124"
                         Click="nav_to_FieldDay"
                         Content="Record Data" />
-                </Grid>
             </Grid>
         </Grid>
         <CommandBar Background="#011826" Foreground="White" Height="76" Grid.ColumnSpan="2" Grid.RowSpan="2" DefaultLabelPosition="Right">

@@ -125,6 +125,12 @@
     <Compile Include="AddBatch.xaml.cs">
       <DependentUpon>AddBatch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddPanel.xaml.cs">
+      <DependentUpon>AddPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeployRetrieve.xaml.cs">
+      <DependentUpon>DeployRetrieve.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WJDataPage.xaml.cs">
       <DependentUpon>WJDataPage.xaml</DependentUpon>
     </Compile>
@@ -179,6 +185,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddBatch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeployRetrieve.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

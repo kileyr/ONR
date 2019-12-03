@@ -57,8 +57,9 @@ namespace ONR
             // buttons not enabled to start
             add_panel_btn.IsEnabled = false;
             rec_data_btn.IsEnabled = false;
-            add_panel_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
-            rec_data_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
+            depl_retrv.IsEnabled = false;
+            //add_panel_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
+            //rec_data_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
 
             // Instead of hard coded items, the data will be pulled from DB
             Batches.Add(new Batch("DW#5", "02/02/2019"));
@@ -87,7 +88,12 @@ namespace ONR
         private void nav_to_AddPanels(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To add panels");
-            this.Frame.Navigate(typeof(AddBatch)); //, name.Text);
+            this.Frame.Navigate(typeof(AddPanel), this.selected_batch.batch_name);
+        }
+
+        private void nav_to_DR(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(DeployRetrieve), this.selected_batch.batch_name);
         }
 
         private void new_batch(object sender, RoutedEventArgs e)
@@ -103,15 +109,19 @@ namespace ONR
                 this.selected_batch = batch;
                 add_panel_btn.IsEnabled = true;
                 rec_data_btn.IsEnabled = true;
+                depl_retrv.IsEnabled = true;
                 add_panel_btn.Style = (Style)Application.Current.Resources["enabled_btn"];
                 rec_data_btn.Style = (Style)Application.Current.Resources["enabled_btn"];
+                depl_retrv.Style = (Style)Application.Current.Resources["enabled_btn"];
             }
             else
             {
                 add_panel_btn.IsEnabled = false;
                 rec_data_btn.IsEnabled = false;
+                depl_retrv.IsEnabled = false;
                 add_panel_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
                 rec_data_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
+                depl_retrv.Style = (Style)Application.Current.Resources["disabled_btn"];
             }
         }
     }

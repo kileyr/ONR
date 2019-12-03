@@ -43,7 +43,7 @@ namespace ONR
                 {
                     next_button.Visibility = Visibility.Collapsed;
                 }
-                string title = $"{this.data_entry.batch_name} {field_date} - Panel {this.data_entry.panel_id}"; 
+                string title = $"{this.data_entry.batch_name} {field_date} - Water Jet Panel {this.data_entry.panel_id}"; 
                 WJDataTitle.Text = title;
                 psiTitle.Text = $"{this.data_entry.psi} psi";
             }

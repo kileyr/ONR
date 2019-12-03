@@ -46,9 +46,9 @@
                     <ColumnDefinition Width="53*"/>
                     <ColumnDefinition Width="354*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Batch Name" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Grid.Row="1" Text="Recorder" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Grid.Row="2" Text="Observer" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Text="Batch Name" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" FontSize="15" Text="Recorder" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2"  FontSize="15" Text="Observer" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <TextBox Name="batch_box" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="300">
                     <TextBox.Resources>
                         <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
@@ -91,7 +91,6 @@
             <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save" Click="save_and_nav_to_record"/>
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="Batches" Click="nav_to_BatchHome"/>
-                <AppBarButton Label="Record Data"/>
             </CommandBar.SecondaryCommands>
             <CommandBar.Content>
                 <TextBlock Grid.Column="0"
