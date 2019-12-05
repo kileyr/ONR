@@ -28,8 +28,7 @@
                 <ColumnDefinition Width="773*"/>
                 <ColumnDefinition Width="99*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
-               <TextBlock 
+            <TextBlock Grid.Column="1"
                Name ="WJDataTitle"
                Grid.Row="0"
                FontSize="30"
@@ -37,15 +36,15 @@
                TextAlignment="Center"
                VerticalAlignment="Center"
                HorizontalAlignment="Left"/>
-               <TextBlock 
+               <!--<TextBlock 
                Name ="psiTitle"
                Grid.Row="0"
                FontSize="25"
                Text="WHAT"
                TextAlignment="Center"
                VerticalAlignment="Center"
-               HorizontalAlignment="Left"/>
-            </StackPanel>
+               HorizontalAlignment="Left"/>-->
+            
 
             <ScrollViewer Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -441,8 +440,8 @@
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPointerOver" Color="#C1D4D9" />
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPressed" Color="#C1D4D9" />
             </CommandBar.Resources>
-            <AppBarButton Name="next_button" Icon="Forward" IsCompact="false" Foreground="White" Label="Save and Next" Click="save_and_next"/>
-            <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save and Exit" Click="save_and_exit"/>
+            <!--<AppBarButton Name="next_button" Icon="Forward" IsCompact="false" Foreground="White" Label="Save and Next" Click="save_and_next"/>-->
+            <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save" Click="save_and_exit"/>
             <AppBarButton Icon="Cancel" IsCompact="false" Foreground="White" Label="Exit" Click="exit"/>
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="Batches" Click="nav_to_BatchHome"/>

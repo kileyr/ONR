@@ -15,35 +15,19 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+
 
 namespace ONR
 {
-    public class PanelFouling
-    {
-        public string panel_id;
-        public PanelFouling(string id)
-        { 
-            this.panel_id = id;
-        }
-    }
 
-    public class FoulingDataEntry
-    {
-        public string panel_id;
-        public string batch_name;
-        public FoulingDataEntry(string id, string batch)
-        {
-            this.panel_id = id;
-            this.batch_name = batch;
-        }
-    }
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    /* Description:
+     *  This page displays all panels in the selected batch. Selecting a panel will take a user to the foulding
+     *  data information. Navigation to this page takes as an argument a Batch object, specifying the name and id 
+     *  of the batch. 
+     */
     public sealed partial class FoulingPanels : Page
     {
-        public string batch_name;
+        public Batch selected_batch;
         private ObservableCollection<PanelFouling> _foulingPanels = new ObservableCollection<PanelFouling>();
        
         public FoulingPanels()
@@ -60,10 +44,10 @@ namespace ONR
         {
             // write field day title
             string field_date = DateTime.Today.ToString("MM.dd.yyyy");
-            if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
+            if (e.Parameter != null)
             {
-                this.batch_name = e.Parameter.ToString();
-                foulingTitle.Text = $"{e.Parameter.ToString()} {field_date} - Fouling Panels";
+                this.selected_batch = (Batch)e.Parameter;
+                foulingTitle.Text = $"{this.selected_batch.batch_name} {field_date} - Fouling Panels";
             }
             fouling_panels.Add(new PanelFouling("1234"));
             fouling_panels.Add(new PanelFouling("1235"));
@@ -82,25 +66,26 @@ namespace ONR
         private void to_fouling(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To fouling");
-            this.Frame.Navigate(typeof(FoulingPanels), this.batch_name);
+            //this.Frame.Navigate(typeof(FoulingPanels), this.selected_batch);
         }
 
         private void to_waterjet(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To waterjet");
-            this.Frame.Navigate(typeof(WJPanels), this.batch_name);
+            WaterJet wj = new WaterJet(this.selected_batch, 0);
+            this.Frame.Navigate(typeof(WJPanels), wj);
         }
 
         private void to_push(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To push");
-            this.Frame.Navigate(typeof(PushPanels), this.batch_name);
+            this.Frame.Navigate(typeof(PushPanels), this.selected_batch);
         }
 
         private void select_FoulingPanel(object sender, SelectionChangedEventArgs e)
         {
             PanelFouling panel = FoulingPanel.SelectedItem as PanelFouling;
-            FoulingDataEntry data = new FoulingDataEntry(panel.panel_id, this.batch_name);
+            FoulingDataEntry data = new FoulingDataEntry(panel.panel_id, this.selected_batch);
             this.Frame.Navigate(typeof(FoulingDataPage), data);
         }
     }

@@ -15,53 +15,19 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+
 
 namespace ONR
 {
-    public class PanelWJ
-    {
-        public string panel_id;
-        public PanelWJ(string id)
-        {
-            this.panel_id = id;
-        }
-    }
-
-    public class WJDataEntry
-    {
-        public string panel_id;
-        public string batch_name;
-        public int psi;
-        public WJDataEntry(string id, string batch)
-        { 
-            this.panel_id = id;
-            this.batch_name = batch;
-            this.psi = 0;
-        }
-
-        public void next_psi()
-        {
-            if(this.psi < 120)
-            {
-                this.psi += 40;
-            }
-            else if(this.psi == 120)
-            {
-                this.psi = 180;
-            }
-            else if(this.psi == 180)
-            {
-                this.psi = 240;
-            }
-        }
-    }
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    /* Description:
+     *   This page displays all panels for the given batch that can have data recorded for water jet - 
+     *   user must also specify from the drop down menu what psi they will be recording panels under
+     *   This page will take a WJRecord object, which will specify the name of the batch, id, current psi, etc.
+     */
+   
     public sealed partial class WJPanels : Page
     {
-        public string batch_name;
+        public WaterJet wj_info;
         private ObservableCollection<PanelWJ> _wjPanels = new ObservableCollection<PanelWJ>();
 
         public WJPanels()
@@ -78,10 +44,20 @@ namespace ONR
         {
             // write field day title
             string field_date = DateTime.Today.ToString("MM.dd.yyyy");
-            if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
+            if (e.Parameter != null)
             {
-                this.batch_name = e.Parameter.ToString();
-                WJTitle.Text = $"{e.Parameter.ToString()} {field_date} - Water Jet Panels";
+                this.wj_info = (WaterJet)e.Parameter;
+                WJTitle.Text = $"{this.wj_info.batch.batch_name} {field_date} - Water Jet Panels";
+                psiVal.Text = $"{this.wj_info.psi} psi";
+                // if the psi is 240 there is no next icon
+                if(this.wj_info.psi == 240)
+                {
+                    next_button.Visibility = Visibility.Collapsed;
+                }
+                else if(this.wj_info.psi == 0)
+                {
+                    back_button.Visibility = Visibility.Collapsed;
+                }
             }
 
             wj_panels.Add(new PanelWJ("1234"));
@@ -100,25 +76,77 @@ namespace ONR
         private void to_fouling(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To fouling");
-            this.Frame.Navigate(typeof(FoulingPanels), this.batch_name);
+            this.Frame.Navigate(typeof(FoulingPanels), this.wj_info.batch);
         }
 
         private void to_waterjet(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To waterjet");
-            this.Frame.Navigate(typeof(WJPanels), this.batch_name);
+           // this.Frame.Navigate(typeof(WJPanels), this.wj_info.batch);
         }
 
         private void to_push(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To push");
-            this.Frame.Navigate(typeof(PushPanels), this.batch_name);
+            this.Frame.Navigate(typeof(PushPanels), this.wj_info.batch);
+        }
+
+        private void next_psi(object sender, RoutedEventArgs e)
+        {
+            if (this.wj_info.psi < 120)
+            {
+                this.wj_info.psi += 40;
+            }
+            else if (this.wj_info.psi == 120)
+            {
+                this.wj_info.psi = 180;
+            }
+            else if (this.wj_info.psi == 180)
+            {
+                this.wj_info.psi = 240;
+            }
+            psiVal.Text = $"{this.wj_info.psi} psi";
+            if (this.wj_info.psi > 0 && this.wj_info.psi < 240)
+            {
+                next_button.Visibility = Visibility.Visible;
+                back_button.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                next_button.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void back_psi(object sender, RoutedEventArgs e)
+        {
+            if (this.wj_info.psi <= 120 && this.wj_info.psi > 0)
+            {
+                this.wj_info.psi -= 40;
+            }
+            else if (this.wj_info.psi == 180)
+            {
+                this.wj_info.psi = 120;
+            }
+            else if (this.wj_info.psi == 240)
+            {
+                this.wj_info.psi = 180;
+            }
+            psiVal.Text = $"{this.wj_info.psi} psi";
+            if (this.wj_info.psi > 0 && this.wj_info.psi < 240)
+            {
+                next_button.Visibility = Visibility.Visible;
+                back_button.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                back_button.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void select_WJPanel(object sender, SelectionChangedEventArgs e)
         {
             PanelWJ panel = _WJPanels_.SelectedItem as PanelWJ;
-            WJDataEntry data = new WJDataEntry(panel.panel_id, this.batch_name);
+            WJDataEntry data = new WJDataEntry(panel.panel_id, this.wj_info.batch, this.wj_info.psi);
             this.Frame.Navigate(typeof(WJDataPage), data);
         }
     }

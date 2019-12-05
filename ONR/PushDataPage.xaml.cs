@@ -14,13 +14,15 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+
 
 namespace ONR
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    /* Description:
+     *  This is the record data page for push information that would be recorded for a panel in the field.
+     *  User can save and add new to write the information to the table and record for a new organism on 
+     *  the same panel. This page takes a PushDataEntry object that contains batch info, panel id.
+     */
     public sealed partial class PushDataPage : Page
     {
         public PushDataEntry data_entry;
@@ -36,7 +38,7 @@ namespace ONR
             if (e.Parameter != null)
             {
                 this.data_entry = (PushDataEntry)e.Parameter;
-                string title = $"{this.data_entry.batch_name} {field_date} - Push Panel {this.data_entry.panel_id}";
+                string title = $"{this.data_entry.batch.batch_name} {field_date} - Push Panel {this.data_entry.panel_id}";
                 PushDataTitle.Text = title;
             }
 
@@ -54,12 +56,12 @@ namespace ONR
              * TODO: Write contents of textBoxes to database here
              **/
 
-            this.Frame.Navigate(typeof(PushPanels), this.data_entry.batch_name);
+            this.Frame.Navigate(typeof(PushPanels), this.data_entry.batch);
         }
 
         private void exit(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(PushPanels), this.data_entry.batch_name);
+            this.Frame.Navigate(typeof(PushPanels), this.data_entry.batch);
         }
 
         private void save_and_new(object sender, RoutedEventArgs e)

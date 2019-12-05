@@ -15,35 +15,17 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace ONR
 {
-    public class PanelPush
-    {
-        public string panel_id;
-        public PanelPush(string id)
-        {
-            this.panel_id = id;
-        }
-    }
-
-    public class PushDataEntry
-    {
-        public string panel_id;
-        public string batch_name;
-        public PushDataEntry(string id, string batch)
-        {
-            this.panel_id = id;
-            this.batch_name = batch;
-        }
-    }
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    /* Description:
+     *  This page displays panels for recording push information from the selected batch. Selecting a panel 
+     *  will take the user to the panel data entry page. Naviagation to this page takes as an argument a Batch
+     *  object that specifies the batch name and id. 
+     */
     public sealed partial class PushPanels : Page
     {
-        public string batch_name;
+        public Batch selected_batch;
         private ObservableCollection<PanelPush> _pushPanels = new ObservableCollection<PanelPush>();
 
         public PushPanels()
@@ -60,10 +42,10 @@ namespace ONR
         {
             // write field day title
             string field_date = DateTime.Today.ToString("MM.dd.yyyy");
-            if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
+            if (e.Parameter != null)
             {
-                this.batch_name = e.Parameter.ToString();
-                PushTitle.Text = $"{e.Parameter.ToString()} {field_date} - Push Panels";
+                this.selected_batch = (Batch)e.Parameter;
+                PushTitle.Text = $"{this.selected_batch.batch_name} {field_date} - Push Panels";
             }
 
             push_panels.Add(new PanelPush("1234"));
@@ -83,25 +65,26 @@ namespace ONR
         private void to_fouling(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To fouling");
-            this.Frame.Navigate(typeof(FoulingPanels), this.batch_name);
+            this.Frame.Navigate(typeof(FoulingPanels), this.selected_batch);
         }
 
         private void to_waterjet(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To waterjet");
-            this.Frame.Navigate(typeof(WJPanels), this.batch_name);
+            WaterJet wj = new WaterJet(this.selected_batch, 0);
+            this.Frame.Navigate(typeof(WJPanels), wj);
         }
 
         private void to_push(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To push");
-            this.Frame.Navigate(typeof(PushPanels), this.batch_name);
+            this.Frame.Navigate(typeof(PushPanels), this.selected_batch);
         }
 
         private void select_PushPanel(object sender, SelectionChangedEventArgs e)
         {
             PanelPush panel = _PushPanels_.SelectedItem as PanelPush;
-            PushDataEntry data = new PushDataEntry(panel.panel_id, this.batch_name);
+            PushDataEntry data = new PushDataEntry(panel.panel_id, this.selected_batch);
             this.Frame.Navigate(typeof(PushDataPage), data);
         }
     }

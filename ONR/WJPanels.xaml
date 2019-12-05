@@ -24,14 +24,41 @@
                 <ColumnDefinition Width="773*"/>
                 <ColumnDefinition Width="99*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="1"
+            <StackPanel Grid.Column="1">
+              <TextBlock
                Grid.Row="0"
                Name="WJTitle"
+               Text="Temp"
                FontSize="30"
                TextAlignment="Center"
                VerticalAlignment="Center"
                HorizontalAlignment="Left"
             />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                    Grid.Column="0"
+                    Name="psiVal"
+                    Text="Temp"
+                    FontSize="25"
+                    TextAlignment="Center"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"/>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <StackPanel.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="Margin" Value="0,0,10,0"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <Button Name="back_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72B;" Background="White" Click="back_psi"/>
+                        <Button Name="next_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72A;" Background="White" Click="next_psi"/>
+                    </StackPanel>
+                </Grid>
+
+            </StackPanel>
             <ScrollContentPresenter Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
             <ListView Name="_WJPanels_" Grid.Column="1" Grid.Row="1" SelectionChanged="select_WJPanel" ItemsSource="{x:Bind wj_panels}"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <ListView.ItemContainerStyle>

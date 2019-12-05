@@ -14,13 +14,15 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace ONR
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    /* Description:
+     *  This page provides all fields that need to be filed out about a water jet panel in the field, when a user
+     *  saves this information it will be written to the water jet data information table using the field day id 
+     *  (batch_date) as a unique identifier.
+     *  This page takes a WJDataEntry argument, which contains batch info, psi, and panel
+     */
     public sealed partial class WJDataPage : Page
     {
         public WJDataEntry data_entry;
@@ -38,14 +40,10 @@ namespace ONR
             if (e.Parameter != null)
             {
                 this.data_entry = (WJDataEntry)e.Parameter;
-                // if the psi is 240 there is no next icon
-                if(this.data_entry.psi == 240)
-                {
-                    next_button.Visibility = Visibility.Collapsed;
-                }
-                string title = $"{this.data_entry.batch_name} {field_date} - Water Jet Panel {this.data_entry.panel_id}"; 
+
+                string title = $"{this.data_entry.batch.batch_name} {field_date} - Panel {this.data_entry.panel_id} - {this.data_entry.psi} psi"; 
                 WJDataTitle.Text = title;
-                psiTitle.Text = $"{this.data_entry.psi} psi";
+                //psiTitle.Text = $"{this.data_entry.psi} psi";
             }
 
             base.OnNavigatedTo(e);
@@ -61,22 +59,15 @@ namespace ONR
             /**
              * TODO: Write contents of textBoxes to database here
              **/
-
-            this.Frame.Navigate(typeof(WJPanels), this.data_entry.batch_name);
+            WaterJet wj = new WaterJet(this.data_entry.batch, this.data_entry.psi);
+            this.Frame.Navigate(typeof(WJPanels), wj);
         }
         
-        private void save_and_next(object sender, RoutedEventArgs e)
-        {
-            /**
-             * TODO: Write contents of textBoxes to database here
-             **/
-            this.data_entry.next_psi();
-            this.Frame.Navigate(typeof(WJDataPage), this.data_entry);
-        }
 
         private void exit(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(WJPanels), this.data_entry.batch_name);
+            WaterJet wj = new WaterJet(this.data_entry.batch, this.data_entry.psi);
+            this.Frame.Navigate(typeof(WJPanels), wj);
         }
 
         private void toggle_total_macro(object sender, RoutedEventArgs e)

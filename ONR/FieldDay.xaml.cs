@@ -14,16 +14,20 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+
 
 namespace ONR
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    /* Description:
+     *  Field day page - before recording a field day entry must be made in the foulding field day 
+     *  and water jet field data tables, this page collects the information needed to make these entries.
+     *  This page is navigated to with a Batch object with the batch name and id. It is navigated to after 
+     *  the user chooses to record for a batch but only after checking to see if a field day already exists for it
+     *  and navigate to it if one does not. 
+     */
     public sealed partial class FieldDay : Page
     {
-        public string selected_batch;
+        public Batch selected_batch;
         public FieldDay()
         {
             this.InitializeComponent();
@@ -34,11 +38,11 @@ namespace ONR
             // write field day title
             string field_date = DateTime.Today.ToString("MM.dd.yyyy");
             FieldDayTitle.Text = $"Create New Field Day - {field_date}";
-            if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
+            if (e.Parameter != null)
             {
                 // set contents of batch_name text box
-                batch_box.Text = e.Parameter.ToString();
-                // FieldDayTitle.Text = $"{e.Parameter.ToString()} {field_date} Field Day";
+                this.selected_batch = (Batch)e.Parameter;
+                batch_box.Text = this.selected_batch.batch_name;
             }
             base.OnNavigatedTo(e);
         }
@@ -51,12 +55,14 @@ namespace ONR
 
         private void save_and_nav_to_record(object sender, RoutedEventArgs e)
         {
-            // first save field day and then navigate to recording
+            /* TODO:
+             * save field day to both waterjet and fouling field day tables
+             */
             Debug.WriteLine("Saving...");
             string batch = batch_box.Text;
             if(!string.IsNullOrWhiteSpace(batch))
             {
-                this.selected_batch = batch;
+                this.selected_batch.batch_name = batch;
                 this.Frame.Navigate(typeof(RecordHome), this.selected_batch);
             }    
         }

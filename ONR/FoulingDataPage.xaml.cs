@@ -15,13 +15,15 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+
 
 namespace ONR
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    /* Description:
+     *  Page for recording fouling data for a panel in the field. Takes as argument on navigation a 
+     *  FoulingDataEntry object, which specifies batch info and panel id. When user saves the data is written 
+     *  to the foulding data information table with the field day tag as a unique identifier. 
+     */
     public sealed partial class FoulingDataPage : Page
     {
         public FoulingDataEntry data_entry;
@@ -39,7 +41,7 @@ namespace ONR
             if (e.Parameter != null)
             {
                 this.data_entry = (FoulingDataEntry)e.Parameter;
-                string title = $"{this.data_entry.batch_name} {field_date} - Fouling Panel {this.data_entry.panel_id}";
+                string title = $"{this.data_entry.batch.batch_name} {field_date} - Fouling Panel {this.data_entry.panel_id}";
                 FoulingDataTitle.Text = title;
             }
 
@@ -57,12 +59,12 @@ namespace ONR
              * TODO: Write contents of textBoxes to database here
              **/
              
-            this.Frame.Navigate(typeof(FoulingPanels), this.data_entry.batch_name);
+            this.Frame.Navigate(typeof(FoulingPanels), this.data_entry.batch);
         }
 
         private void exit(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(FoulingPanels), this.data_entry.batch_name);
+            this.Frame.Navigate(typeof(FoulingPanels), this.data_entry.batch);
         }
 
         private void toggle_total_macro(object sender, RoutedEventArgs e)

@@ -14,16 +14,17 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+
 
 namespace ONR
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    /* Description:
+     *  This is a placeholder page while the user decides is they want to record water jet, push or fouling
+     *  data to record for the batch. On navigation takes as argument a Batch object with the batch name and id
+     */
     public sealed partial class RecordHome : Page
     {
-        public string batch_name;
+        public Batch selected_batch;
 
         public RecordHome()
         {
@@ -32,12 +33,12 @@ namespace ONR
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            // write field day title
+           
             string field_date = DateTime.Today.ToString("MM.dd.yyyy");
-            if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
+            if (e.Parameter != null)
             {
-                this.batch_name = e.Parameter.ToString();
-                RecordTitle.Text = $"{e.Parameter.ToString()} {field_date}";
+                this.selected_batch = (Batch)e.Parameter;
+                RecordTitle.Text = $"{this.selected_batch.batch_name} {field_date}";
             }
             base.OnNavigatedTo(e);
         }
@@ -51,19 +52,20 @@ namespace ONR
         private void to_fouling(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To fouling");
-            this.Frame.Navigate(typeof(FoulingPanels), this.batch_name);
+            this.Frame.Navigate(typeof(FoulingPanels), this.selected_batch);
         }
 
         private void to_waterjet(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To waterjet");
-            this.Frame.Navigate(typeof(WJPanels), this.batch_name);
+            WaterJet wj = new WaterJet(this.selected_batch, 0);
+            this.Frame.Navigate(typeof(WJPanels), wj);
         }
 
         private void to_push(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To push");
-            this.Frame.Navigate(typeof(PushPanels), this.batch_name);
+            this.Frame.Navigate(typeof(PushPanels), this.selected_batch);
         }
     }
 }

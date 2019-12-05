@@ -19,19 +19,7 @@ using Windows.UI.Xaml.Navigation;
 
 namespace ONR
 {
-    public class Batch
-    {
-        public string batch_name;
-        public string date_added;
-        public Batch(string name, string date_added)
-        {
-            this.batch_name = name;
-            this.date_added = date_added;
-        }
-    }
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+
     public sealed partial class BatchHome : Page
     {
         public Batch selected_batch;
@@ -58,10 +46,10 @@ namespace ONR
             add_panel_btn.IsEnabled = false;
             rec_data_btn.IsEnabled = false;
             depl_retrv.IsEnabled = false;
-            //add_panel_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
-            //rec_data_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
 
-            // Instead of hard coded items, the data will be pulled from DB
+            /* TODO:
+             * Read in batches from table and populate list
+             */
             Batches.Add(new Batch("DW#5", "02/02/2019"));
             Batches.Add(new Batch("TS#3", "03/05/2017"));
             Batches.Add(new Batch("TP#6", "06/21/2013"));
@@ -72,11 +60,19 @@ namespace ONR
             Batches.Add(new Batch("TS#3", "03/05/2017"));
             Batches.Add(new Batch("TP#6", "06/21/2013"));
         }
+
+        private void check_nav_path(object sender, RoutedEventArgs e)
+        {
+            /* TODO:
+             * Check to see if a field day is created, if so go to RecordHome, if not go to FieldDay
+             */
+            this.Frame.Navigate(typeof(FieldDay), this.selected_batch);
+        }
         private void nav_to_FieldDay(object sender, RoutedEventArgs e)
         {
             // if field day not in table do field day page else do recordPage
             Debug.WriteLine("To field day");
-            this.Frame.Navigate(typeof(FieldDay), this.selected_batch.batch_name);
+            this.Frame.Navigate(typeof(FieldDay), this.selected_batch);
         }
 
         private void nav_to_FieldDay_menu(object sender, RoutedEventArgs e)
@@ -88,12 +84,12 @@ namespace ONR
         private void nav_to_AddPanels(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("To add panels");
-            this.Frame.Navigate(typeof(AddPanel), this.selected_batch.batch_name);
+            this.Frame.Navigate(typeof(AddPanel), this.selected_batch);
         }
 
         private void nav_to_DR(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(DeployRetrieve), this.selected_batch.batch_name);
+            this.Frame.Navigate(typeof(DeployRetrieve), this.selected_batch);
         }
 
         private void new_batch(object sender, RoutedEventArgs e)

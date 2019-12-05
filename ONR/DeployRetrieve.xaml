@@ -81,7 +81,7 @@
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPointerOver" Color="#C1D4D9" />
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPressed" Color="#C1D4D9" />
             </CommandBar.Resources>
-            <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save"/>
+            <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save" Click="save"/>
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="Batches" Click="nav_to_BatchHome"/>
             </CommandBar.SecondaryCommands>

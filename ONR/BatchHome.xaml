@@ -100,7 +100,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         MinWidth="124"
-                        Click="nav_to_FieldDay"
+                        Click="check_nav_path"
                         Content="Record Data" />
             </Grid>
         </Grid>

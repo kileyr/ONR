@@ -13,13 +13,14 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace ONR
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    /* Description:
+     *  Add a new batch to the database. This page takes no arguments on navigation to and simply writes
+     *  the new batch information to the batches table.
+     */
+   
     public sealed partial class AddBatch : Page
     {
         public AddBatch()

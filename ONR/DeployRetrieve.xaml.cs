@@ -13,16 +13,15 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace ONR
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+/** Description: Page for submitting deploy or retrival dates for a selected batch. If the 
+ * batch has already been deployed the date field for deploy should be filled with query results
+ **/
     public sealed partial class DeployRetrieve : Page
     {
-        public string selected_batch;
+        public Batch selected_batch;
         public DeployRetrieve()
         {
             this.InitializeComponent();
@@ -30,12 +29,15 @@ namespace ONR
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            
+            /*
+            * TODO: Read from Batch table to see if there is a deploy date 
+            * if there is fill in that box 
+            */
 
-            if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
+            if (e.Parameter != null)
             {
-                this.selected_batch = e.Parameter.ToString();
-                DRTitle.Text = $"Deploy or Retrieve {this.selected_batch}";
+                this.selected_batch = (Batch)e.Parameter;
+                DRTitle.Text = $"Deploy or Retrieve {this.selected_batch.batch_name}";
             }
             base.OnNavigatedTo(e);
         }
@@ -43,6 +45,15 @@ namespace ONR
         private void nav_to_BatchHome(object sender, RoutedEventArgs e)
         {
           
+            this.Frame.Navigate(typeof(BatchHome));
+        }
+
+        private void save(object sender, RoutedEventArgs e)
+        {
+            /*
+             * TODO: Write contents of textBoxes to database
+             * Write either deploy or retrieve date to Batch table for the batch id 
+             */
             this.Frame.Navigate(typeof(BatchHome));
         }
     }

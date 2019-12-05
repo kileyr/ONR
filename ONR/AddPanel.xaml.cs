@@ -13,16 +13,17 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+
 
 namespace ONR
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    /* Description:
+     *  Page to add a new panel to a batch - provides the fields needed to fill out in order to add an entry
+     *  to either the water jet panel or fouling panel database for the addition of a new panel
+     */
     public sealed partial class AddPanel : Page
     {
-        public string selected_batch;
+        public Batch selected_batch;
         public AddPanel()
         {
             this.InitializeComponent();
@@ -32,10 +33,10 @@ namespace ONR
         {
             // write field day title
 
-            if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
+            if (e.Parameter != null)
             {
-                this.selected_batch = e.Parameter.ToString();
-                newPanelTitle.Text = $"Add Panel to Batch {this.selected_batch}";
+                this.selected_batch = (Batch)e.Parameter;
+                newPanelTitle.Text = $"Add Panel to Batch {this.selected_batch.batch_name}";
             }
             base.OnNavigatedTo(e);
         }
@@ -47,18 +48,18 @@ namespace ONR
 
         private void save_and_exit(object sender, RoutedEventArgs e)
         {
-            /**
+            /*
              * TODO: Write contents of textBoxes to database here
-             **/
+             */
 
             this.Frame.Navigate(typeof(BatchHome));
         }
 
         private void save_and_new(object sender, RoutedEventArgs e)
-        {
-            /**
+        { 
+            /*
              * TODO: Write contents of textBoxes to database here
-             **/
+             */
 
             this.Frame.Navigate(typeof(AddPanel), this.selected_batch);
         }
