@@ -134,82 +134,7 @@
                             </TextBox.Resources>
                         </TextBox>
                     </StackPanel>
-                   <!-- <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Batch Name" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <TextBox  Grid.Row="2"  Name="batch_name" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
-                            <TextBox.Resources>
-                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
-                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
-                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
-                            </TextBox.Resources>
-                        </TextBox>
-                    </Grid>
-                    <Grid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Institution ID" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <TextBox  Grid.Row="2"  Name="institution" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
-                            <TextBox.Resources>
-                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
-                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
-                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
-                            </TextBox.Resources>
-                        </TextBox>
-                    </Grid>
-                    <Grid Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Date Recieved" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <TextBox  Grid.Row="2"  Name="date_recv" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
-                            <TextBox.Resources>
-                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
-                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
-                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
-                            </TextBox.Resources>
-                        </TextBox>
-                    </Grid>
-                    <Grid Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Water Jet" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <CheckBox Grid.Row="2" Name="wj_check">
-                            <CheckBox.Resources>
-                                <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked" Color="#496B73" />
-                                <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver" Color="#496B73" />
-                                <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPressed" Color="#496B73" />
-                            </CheckBox.Resources>
-                        </CheckBox>
-
-                    </Grid>
-                    <Grid Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Notes" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <TextBox  Grid.Row="2"  Name="notes" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
-                            <TextBox.Resources>
-                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
-                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
-                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
-                            </TextBox.Resources>
-                        </TextBox>
-                    </Grid> -->
+                  
                 </Grid>
             </ScrollViewer>
 
@@ -224,7 +149,7 @@
                 <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPressed" Color="#C1D4D9" />
             </CommandBar.Resources>
             <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save" Click="save_and_exit"/>
-            <AppBarButton Icon="Cancel" IsCompact="false" Foreground="White" Label="Cancel" Click="exit"/>
+            <!--<AppBarButton Icon="Cancel" IsCompact="false" Foreground="White" Label="Cancel" Click="exit"/>-->
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="Batches" Click="nav_to_BatchHome"/>
             </CommandBar.SecondaryCommands>

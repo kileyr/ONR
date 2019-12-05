@@ -38,6 +38,7 @@ namespace ONR
             // write field day title
             string field_date = DateTime.Today.ToString("MM.dd.yyyy");
             FieldDayTitle.Text = $"Create New Field Day - {field_date}";
+            this.selected_batch = null;
             if (e.Parameter != null)
             {
                 // set contents of batch_name text box
@@ -60,11 +61,26 @@ namespace ONR
              */
             Debug.WriteLine("Saving...");
             string batch = batch_box.Text;
+            if(this.selected_batch == null)
+            {
+                /* TODO:
+                 *  if batch is not chosen from the batch list, perfrom query 
+                 *  to get id and date of batch
+                 */
+                this.selected_batch = new Batch(batch, "temp data");
+            }
             if(!string.IsNullOrWhiteSpace(batch))
             {
-                this.selected_batch.batch_name = batch;
                 this.Frame.Navigate(typeof(RecordHome), this.selected_batch);
             }    
+        }
+
+        private void save(object sender, RoutedEventArgs e)
+        {
+            /* TODO:
+             * Create field day in waterjet and fouling tables
+             */
+            this.Frame.Navigate(typeof(BatchHome));
         }
 
         /**

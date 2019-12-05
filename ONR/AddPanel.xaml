@@ -129,78 +129,6 @@
                             </TextBox.Resources>
                         </TextBox>
                     </StackPanel>
-                    <!-- <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Panel Type" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <ComboBox Grid.Row="2" Name="panel_type" PlaceholderText="Select Type" MinWidth="450" Width="Auto">
-                            <x:String>Fouling</x:String>
-                            <x:String>Water Jet</x:String>
-                        </ComboBox>
-                    </Grid>
-                    <Grid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Panel ID" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <TextBox  Grid.Row="2"  Name="panel_id" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
-                            <TextBox.Resources>
-                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
-                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
-                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
-                            </TextBox.Resources>
-                        </TextBox>
-                    </Grid>
-                    <Grid Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Group" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <TextBox  Grid.Row="2"  Name="group" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
-                            <TextBox.Resources>
-                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
-                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
-                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
-                            </TextBox.Resources>
-                        </TextBox>
-                    </Grid>
-                    <Grid Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Replicate" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <TextBox  Grid.Row="2"  Name="replicate" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
-                            <TextBox.Resources>
-                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
-                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
-                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
-                            </TextBox.Resources>
-                        </TextBox>
-                    </Grid>
-                    <Grid Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Notes/Description" FontSize="20" Foreground="#496B73" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <TextBox  Grid.Row="2"  Name="notes" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
-                            <TextBox.Resources>
-                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
-                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
-                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
-                            </TextBox.Resources>
-                        </TextBox>
-                    </Grid> -->
                 </Grid>
             </ScrollViewer>
 
@@ -216,7 +144,7 @@
             </CommandBar.Resources>
             <AppBarButton Icon="Add" IsCompact="false" Foreground="White" Label="Save and New" Click="save_and_new"/>
             <AppBarButton Icon="Accept" IsCompact="false" Foreground="White" Label="Save" Click="save_and_exit"/>
-            <AppBarButton Icon="Cancel" IsCompact="false" Foreground="White" Label="Cancel" Click="exit"/>
+            <!--<AppBarButton Icon="Cancel" IsCompact="false" Foreground="White" Label="Cancel" Click="exit"/>-->
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="Batches" Click="nav_to_BatchHome"/>
             </CommandBar.SecondaryCommands>
