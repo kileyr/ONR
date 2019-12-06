@@ -106,18 +106,12 @@ namespace ONR
                 add_panel_btn.IsEnabled = true;
                 rec_data_btn.IsEnabled = true;
                 depl_retrv.IsEnabled = true;
-                add_panel_btn.Style = (Style)Application.Current.Resources["enabled_btn"];
-                rec_data_btn.Style = (Style)Application.Current.Resources["enabled_btn"];
-                depl_retrv.Style = (Style)Application.Current.Resources["enabled_btn"];
             }
             else
             {
                 add_panel_btn.IsEnabled = false;
                 rec_data_btn.IsEnabled = false;
                 depl_retrv.IsEnabled = false;
-                add_panel_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
-                rec_data_btn.Style = (Style)Application.Current.Resources["disabled_btn"];
-                depl_retrv.Style = (Style)Application.Current.Resources["disabled_btn"];
             }
         }
     }

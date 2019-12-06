@@ -43,6 +43,7 @@ namespace ONR
                 this.data_entry = (FoulingDataEntry)e.Parameter;
                 string title = $"{this.data_entry.batch.batch_name} {field_date} - Fouling Panel {this.data_entry.panel_id}";
                 FoulingDataTitle.Text = title;
+                update_total_macro();
             }
 
             base.OnNavigatedTo(e);
@@ -154,19 +155,22 @@ namespace ONR
         private float read_int(string number)
         {
             float val = 0;
-            try
+            if (number != "")
             {
-                val  = float.Parse(number, CultureInfo.InvariantCulture);
+                try
+                {
+                    val = float.Parse(number, CultureInfo.InvariantCulture);
 
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine($"Unable to parse");
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine($"Unable to parse");
+                }
             }
             return val;
         }
 
-        private void update_total_macro(object sender, RoutedEventArgs e)
+        private void update_total_macro()
         {
 
             float val1 = read_int(this.data_entry.barnacle.barn_perc);

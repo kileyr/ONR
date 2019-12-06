@@ -120,13 +120,12 @@ namespace ONR
 
     public class WJDataEntry
     {
-        public string panel_id;
-        public Batch batch;
+        public FoulingDataEntry data_info;
         public int psi;
-        public WJDataEntry(string id, Batch batch, int psi)
+        public WJDataEntry(FoulingDataEntry info, int psi)
         {
-            this.panel_id = id;
-            this.batch = batch;
+
+            this.data_info = info;
             this.psi = psi;
         }
 

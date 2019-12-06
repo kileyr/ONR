@@ -20,7 +20,7 @@ namespace ONR
     public sealed partial class AnenomesPage : Page
     {
         public FoulingDataEntry data_entry;
-
+        public WJDataEntry wj_data_entry;
         public AnenomesPage()
         {
             this.InitializeComponent();
@@ -36,7 +36,14 @@ namespace ONR
                 this.data_entry = (FoulingDataEntry)e.Parameter;
                 string title = $"{this.data_entry.batch.batch_name} {field_date} - Fouling Panel {this.data_entry.panel_id}";
                 AnenomeTitle.Text = title;
-                cn.Text = this.data_entry.hydroids.cn;
+                cn.Text = this.data_entry.anenomes.cn;
+            }
+            else if (e.Parameter != null && (e.Parameter is WJDataEntry))
+            {
+                this.wj_data_entry = (WJDataEntry)e.Parameter;
+                string title = $"{this.wj_data_entry.data_info.batch.batch_name} {field_date} - Fouling Panel {this.wj_data_entry.data_info.panel_id} - {this.wj_data_entry.psi} psi";
+                AnenomeTitle.Text = title;
+                cn.Text = this.wj_data_entry.data_info.anenomes.cn;
             }
 
             base.OnNavigatedTo(e);
@@ -44,8 +51,16 @@ namespace ONR
 
         private void save(object sender, RoutedEventArgs e)
         {
-            this.data_entry.hydroids.cn = cn.Text;
-            this.Frame.Navigate(typeof(FoulingDataPage), this.data_entry);
+            if (this.data_entry != null)
+            {
+                this.data_entry.anenomes.cn = cn.Text;
+                this.Frame.Navigate(typeof(FoulingDataPage), this.data_entry);
+            }
+            else if(this.wj_data_entry != null)
+            {
+                this.wj_data_entry.data_info.anenomes.cn = cn.Text;
+                this.Frame.Navigate(typeof(WJDataPage), this.wj_data_entry);
+            }
         }
 
         private void nav_to_BatchHome(object sender, RoutedEventArgs e)

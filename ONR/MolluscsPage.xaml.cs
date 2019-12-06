@@ -20,6 +20,7 @@ namespace ONR
     public sealed partial class MolluscsPage : Page
     {
         public FoulingDataEntry data_entry;
+        public WJDataEntry wj_data_entry;
         public MolluscsPage()
         {
             this.InitializeComponent();
@@ -37,14 +38,29 @@ namespace ONR
                 MolluscsTitle.Text = title;
                 moll_perc.Text = this.data_entry.molluscs.mol_perc;
             }
+            else if (e.Parameter != null && (e.Parameter is WJDataEntry))
+            {
+                this.wj_data_entry = (WJDataEntry)e.Parameter;
+                string title = $"{this.wj_data_entry.data_info.batch.batch_name} {field_date} - Fouling Panel {this.wj_data_entry.data_info.panel_id} - {this.wj_data_entry.psi} psi";
+                MolluscsTitle.Text = title;
+                moll_perc.Text = this.wj_data_entry.data_info.molluscs.mol_perc;
+            }
 
             base.OnNavigatedTo(e);
         }
 
         private void save(object sender, RoutedEventArgs e)
         {
-            this.data_entry.molluscs.mol_perc = moll_perc.Text;
-            this.Frame.Navigate(typeof(FoulingDataPage), this.data_entry);
+            if (this.data_entry != null)
+            {
+                this.data_entry.molluscs.mol_perc = moll_perc.Text;
+                this.Frame.Navigate(typeof(FoulingDataPage), this.data_entry);
+            } 
+            else if(this.wj_data_entry != null)
+            {
+                this.wj_data_entry.data_info.molluscs.mol_perc = moll_perc.Text;
+                this.Frame.Navigate(typeof(WJDataPage), this.wj_data_entry);
+            }
         }
 
         private void nav_to_BatchHome(object sender, RoutedEventArgs e)

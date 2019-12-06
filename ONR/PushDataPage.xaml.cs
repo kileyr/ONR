@@ -45,6 +45,10 @@ namespace ONR
             base.OnNavigatedTo(e);
         }
 
+        /* NOTE: The push table has a linear length and linear width field as well as a circular 
+         * width and circular length field and only one is used for each organism depending on the shape
+         * Write to the fields given whether the user checked linear or circular
+         */
         private void nav_to_BatchHome(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(BatchHome));
@@ -71,6 +75,19 @@ namespace ONR
              **/
 
             this.Frame.Navigate(typeof(PushDataPage), this.data_entry);
+        }
+
+        private void handle_check(object sender, RoutedEventArgs e)
+        {
+            CheckBox cb = sender as CheckBox;
+            if (cb.Name == "circular")
+            {
+                linear.IsChecked = false;
+            }
+            else if (cb.Name == "linear")
+            {
+                circular.IsChecked = false;
+            }
         }
     }
 }

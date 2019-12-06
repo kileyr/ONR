@@ -77,31 +77,52 @@
                 </Grid.ColumnDefinitions>
                 <Button
                         Name="add_panel_btn"
-                        Style="{StaticResource disabled_btn}"
                         Grid.Column="1"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
                         Click="nav_to_AddPanels"
                         MinWidth="124"
-                        Content="Add Panels" />
+                        Content="Add Panels">
+                    <Button.Resources>
+                        <SolidColorBrush x:Key="ButtonBackground" Color="#C1D4D9"/>
+                        <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#abc1c7" />
+                        <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#496B73" />
+                        <SolidColorBrush x:Key="ButtonBackgroundDisabled" Color="#ccdade" />
+                        <SolidColorBrush x:Key="ButtonForegroundDisabled	" Color="#919799" />
+                    </Button.Resources>
+                </Button>
                 <Button
                         Name="depl_retrv"
-                        Style="{StaticResource disabled_btn}"
                         Grid.Column="3"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Click="nav_to_DR"
                         MinWidth="124"
-                        Content="Deploy/Retrieve" />
+                        Content="Deploy/Retrieve" >
+                    <Button.Resources>
+                        <SolidColorBrush x:Key="ButtonBackground" Color="#C1D4D9"/>
+                        <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#abc1c7" />
+                        <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#496B73" />
+                        <SolidColorBrush x:Key="ButtonBackgroundDisabled" Color="#ccdade" />
+                        <SolidColorBrush x:Key="ButtonForegroundDisabled	" Color="#919799" />
+                    </Button.Resources>
+                </Button>
                 <Button
                         Name="rec_data_btn"
-                        Style="{StaticResource disabled_btn}"
                         Grid.Column="5"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         MinWidth="124"
                         Click="check_nav_path"
-                        Content="Record Data" />
+                        Content="Record Data">
+                    <Button.Resources>
+                        <SolidColorBrush x:Key="ButtonBackground" Color="#C1D4D9"/>
+                        <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#abc1c7" />
+                        <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#496B73" />
+                        <SolidColorBrush x:Key="ButtonBackgroundDisabled" Color="#ccdade" />
+                        <SolidColorBrush x:Key="ButtonForegroundDisabled	" Color="#919799" />
+                    </Button.Resources>
+                </Button>
             </Grid>
         </Grid>
         <CommandBar Background="#011826" Foreground="White" Height="76" Grid.ColumnSpan="2" Grid.RowSpan="2" DefaultLabelPosition="Right">

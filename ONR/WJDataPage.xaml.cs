@@ -25,7 +25,8 @@ namespace ONR
      */
     public sealed partial class WJDataPage : Page
     {
-        public WJDataEntry data_entry;
+        public WJDataEntry wj_data_entry;
+        public FoulingDataEntry data_entry;
         public float total_macro_count = 0;
         public WJDataPage()
         {
@@ -39,11 +40,11 @@ namespace ONR
             string field_date = DateTime.Today.ToString("MM.dd.yyyy");
             if (e.Parameter != null)
             {
-                this.data_entry = (WJDataEntry)e.Parameter;
-
-                string title = $"{this.data_entry.batch.batch_name} {field_date} - Panel {this.data_entry.panel_id} - {this.data_entry.psi} psi"; 
+                this.wj_data_entry = (WJDataEntry)e.Parameter;
+                this.data_entry = this.wj_data_entry.data_info;
+                string title = $"{this.data_entry.batch.batch_name} {field_date} - Panel {this.data_entry.panel_id} - {this.wj_data_entry.psi} psi"; 
                 WJDataTitle.Text = title;
-                //psiTitle.Text = $"{this.data_entry.psi} psi";
+                update_total_macro();
             }
 
             base.OnNavigatedTo(e);
@@ -59,15 +60,80 @@ namespace ONR
             /**
              * TODO: Write contents of textBoxes to database here
              **/
-            WaterJet wj = new WaterJet(this.data_entry.batch, this.data_entry.psi);
+            WaterJet wj = new WaterJet(this.data_entry.batch, this.wj_data_entry.psi);
             this.Frame.Navigate(typeof(WJPanels), wj);
         }
         
 
         private void exit(object sender, RoutedEventArgs e)
         {
-            WaterJet wj = new WaterJet(this.data_entry.batch, this.data_entry.psi);
+            WaterJet wj = new WaterJet(this.data_entry.batch, this.wj_data_entry.psi);
             this.Frame.Navigate(typeof(WJPanels), wj);
+        }
+
+        private void to_barnacle(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(BarnaclePage), this.wj_data_entry);
+        }
+
+        private void to_molluscs(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MolluscsPage), this.wj_data_entry);
+        }
+
+        private void to_tubeworms(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TubewormPage), this.wj_data_entry);
+        }
+
+        private void to_bryozoans(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(BryozoansPage), this.wj_data_entry);
+        }
+
+        private void to_hydroids(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(HydroidsPage), this.wj_data_entry);
+        }
+
+        private void to_anenomes(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AnenomesPage), this.wj_data_entry);
+        }
+
+        private void to_tunicates(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TunicatesPage), this.wj_data_entry);
+        }
+
+        private void to_amphipods(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AmphipodsPage), this.wj_data_entry);
+        }
+
+        private void to_sponges(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SpongesPage), this.wj_data_entry);
+        }
+
+        private void to_aglae(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AglaePage), this.wj_data_entry);
+        }
+
+        private void to_unknownsoft(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(UnknownSoftPage), this.wj_data_entry);
+        }
+
+        private void to_incipient(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(IncipientPage), this.wj_data_entry);
+        }
+
+        private void to_biofilm(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(BiofilmPage), this.wj_data_entry);
         }
 
         private void toggle_total_macro(object sender, RoutedEventArgs e)
@@ -88,41 +154,43 @@ namespace ONR
             }
         }
 
-        private float read_int(TextBox name)
+        private float read_int(string number)
         {
             float val = 0;
-            try
+            if (number != "")
             {
-                string t = name.Text;
-                val = float.Parse(t, CultureInfo.InvariantCulture);
+                try
+                {
+                    val = float.Parse(number, CultureInfo.InvariantCulture);
 
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine($"Unable to parse");
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine($"Unable to parse");
+                }
             }
             return val;
         }
 
-        private void update_total_macro(object sender, RoutedEventArgs e)
+        private void update_total_macro()
         {
 
-            float val1 = read_int(barn_perc);
-            float val2 = read_int(moll_perc);
-            float val3 = read_int(psed_perc);
-            float val4 = read_int(pcal_perc);
-            float val5 = read_int(eb_perc);
-            float val6 = read_int(wsp_perc);
-            float val7 = read_int(br_perc);
-            float val8 = read_int(hyd_perc);
-            float val9 = read_int(anen_perc);
-            float val10 = read_int(tun_ct);
-            float val11 = read_int(tun_pcal);
-            float val12 = read_int(amph_cor);
-            float val13 = read_int(sp_perc);
-            float val14 = read_int(alg_pcal);
-            float val15 = read_int(if_field);
-            float val16 = read_int(biofilm_si);
+            float val1 = read_int(this.data_entry.barnacle.barn_perc);
+            float val2 = read_int(this.data_entry.molluscs.mol_perc);
+            float val3 = read_int(this.data_entry.tubeworms.pcal_perc);
+            float val4 = read_int(this.data_entry.tubeworms.psed_perc);
+            float val5 = read_int(this.data_entry.bryozoans.eb);
+            float val6 = read_int(this.data_entry.bryozoans.wsp);
+            float val7 = read_int(this.data_entry.bryozoans.br);
+            float val8 = read_int(this.data_entry.hydroids.cn);
+            float val9 = read_int(this.data_entry.anenomes.cn);
+            float val10 = read_int(this.data_entry.tunicates.ct);
+            float val11 = read_int(this.data_entry.tunicates.pcal);
+            float val12 = read_int(this.data_entry.amphipods.cor);
+            float val13 = read_int(this.data_entry.sponges.sp);
+            float val14 = read_int(this.data_entry.aglae.pcal);
+            float val15 = read_int(this.data_entry.unknownsoft.us_perc);
+            float val16 = read_int(this.data_entry.incipient.IF);
             this.total_macro_count = val1 + val2 + val3 + val4 + val5 + val6 + val7 + val8 + val9 + val10 + val11 + val12 + val13 + val14 + val15 + val16;
             string val = (this.total_macro_count).ToString("N2");
             total_macro.Text = val;

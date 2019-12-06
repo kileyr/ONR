@@ -86,7 +86,7 @@ namespace ONR
         {
             /* TODO:
              *  A read should be performed to the fouling information table here for the
-             *  bathc_field day identifier and the panel. If there is data recorded initialize organisms with that
+             *  batch_field day identifier and the panel. If there is data recorded initialize organisms with that
              *  info, other wise empty inititalization
              */
             PanelFouling panel = FoulingPanel.SelectedItem as PanelFouling;

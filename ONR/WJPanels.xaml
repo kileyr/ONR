@@ -24,7 +24,11 @@
                 <ColumnDefinition Width="773*"/>
                 <ColumnDefinition Width="99*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="1">
+            <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
               <TextBlock
                Grid.Row="0"
                Name="WJTitle"
@@ -34,7 +38,7 @@
                VerticalAlignment="Center"
                HorizontalAlignment="Left"
             />
-                <Grid>
+                <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -58,7 +62,7 @@
                     </StackPanel>
                 </Grid>
 
-            </StackPanel>
+            </Grid>
             <ScrollContentPresenter Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
             <ListView Name="_WJPanels_" Grid.Column="1" Grid.Row="1" SelectionChanged="select_WJPanel" ItemsSource="{x:Bind wj_panels}"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <ListView.ItemContainerStyle>

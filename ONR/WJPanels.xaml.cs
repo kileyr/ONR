@@ -145,8 +145,31 @@ namespace ONR
 
         private void select_WJPanel(object sender, SelectionChangedEventArgs e)
         {
+            /* TODO:
+             *  A read should be performed to the waterjet information table here for the
+             *  batch_field day identifier and the panel and psi. If there is data recorded initialize organisms with that
+             *  info, other wise empty inititalization
+            */
             PanelWJ panel = _WJPanels_.SelectedItem as PanelWJ;
-            WJDataEntry data = new WJDataEntry(panel.panel_id, this.wj_info.batch, this.wj_info.psi);
+
+            Barnacle barnacle = new Barnacle();
+            Molluscs molluscs = new Molluscs();
+            Tubeworms tubeworms = new Tubeworms();
+            Bryozoans bryozoans = new Bryozoans();
+            Hydroids hydroids = new Hydroids();
+            Anenomes anenomes = new Anenomes();
+            Tunicates tunicates = new Tunicates();
+            Amphipods amphipods = new Amphipods();
+            Sponges sponges = new Sponges();
+            Aglae aglae = new Aglae();
+            UnknownSoft unknown = new UnknownSoft();
+            Incipient incipient = new Incipient();
+            Biofilm biofilm = new Biofilm();
+
+            FoulingDataEntry data_info = new FoulingDataEntry(panel.panel_id, this.wj_info.batch, barnacle,
+                molluscs, tubeworms, bryozoans, hydroids, anenomes, tunicates, amphipods, sponges, aglae,
+                unknown, incipient, biofilm);
+            WJDataEntry data = new WJDataEntry(data_info, this.wj_info.psi);
             this.Frame.Navigate(typeof(WJDataPage), data);
         }
     }
