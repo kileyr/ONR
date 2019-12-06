@@ -67,6 +67,11 @@ namespace ONR
             this.Frame.Navigate(typeof(FoulingPanels), this.data_entry.batch);
         }
 
+        private void to_barnacle(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(BarnaclePage), this.data_entry);
+        }
+
         private void toggle_total_macro(object sender, RoutedEventArgs e)
         {
             ToggleSwitch toggleSwitch = sender as ToggleSwitch;
@@ -104,7 +109,7 @@ namespace ONR
         private void update_total_macro(object sender, RoutedEventArgs e)
         {
 
-            float val1 = read_int(barn_perc);
+            /*float val1 = read_int(barn_perc);
             float val2 = read_int(moll_perc);
             float val3 = read_int(psed_perc);
             float val4 = read_int(pcal_perc);
@@ -122,7 +127,7 @@ namespace ONR
             float val16 = read_int(biofilm_si);
             this.total_macro_count = val1 + val2 + val3 + val4 + val5 + val6 + val7 + val8 + val9 + val10 + val11 + val12 + val13 + val14 + val15 + val16;
             string val = (this.total_macro_count).ToString("N2");
-            total_macro.Text = val;
+            total_macro.Text = val;*/
         }
 
     }

@@ -36,7 +36,8 @@
                TextAlignment="Center"
                VerticalAlignment="Center"
                HorizontalAlignment="Left"/>
-            <ScrollViewer Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button Grid.Column="1" Grid.Row="1" Content="Barnacle" HorizontalAlignment="Left" VerticalAlignment="Top" Click="to_barnacle"/>
+            <!--<ScrollViewer Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <Grid.Resources>
                         <Style TargetType="Grid">
@@ -396,7 +397,7 @@
                         </StackPanel>
                     </Grid>
                 </Grid>
-            </ScrollViewer>
+            </ScrollViewer> -->
             <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="11*"/>

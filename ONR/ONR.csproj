@@ -128,6 +128,15 @@
     <Compile Include="AddPanel.xaml.cs">
       <DependentUpon>AddPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BarnaclePage.xaml.cs">
+      <DependentUpon>BarnaclePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TubewormPage.xaml.cs">
+      <DependentUpon>TubewormPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MolluscsPage.xaml.cs">
+      <DependentUpon>MolluscsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ClassLibrary.cs" />
     <Compile Include="DeployRetrieve.xaml.cs">
       <DependentUpon>DeployRetrieve.xaml</DependentUpon>
@@ -190,6 +199,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BarnaclePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TubewormPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MolluscsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

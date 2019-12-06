@@ -69,22 +69,8 @@
                             <x:String>Water Jet</x:String>
                         </ComboBox>
                     </StackPanel>
+                    
                     <StackPanel Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
-                        <StackPanel.Resources>
-                            <Style TargetType="TextBox">
-                                <Setter Property="Margin" Value="20,0,0,0"/>
-                            </Style>
-                        </StackPanel.Resources>
-                        <TextBlock Text="Panel ID"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="120" Width="Auto"/>
-                        <TextBox   Name="panel_id" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
-                            <TextBox.Resources>
-                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
-                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
-                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
-                            </TextBox.Resources>
-                        </TextBox>
-                    </StackPanel>
-                    <StackPanel Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
                         <StackPanel.Resources>
                             <Style TargetType="TextBox">
                                 <Setter Property="Margin" Value="20,0,0,0"/>
@@ -99,7 +85,7 @@
                             </TextBox.Resources>
                         </TextBox>
                     </StackPanel>
-                    <StackPanel Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
+                    <StackPanel Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
                         <StackPanel.Resources>
                             <Style TargetType="TextBox">
                                 <Setter Property="Margin" Value="20,0,0,0"/>
@@ -114,7 +100,7 @@
                             </TextBox.Resources>
                         </TextBox>
                     </StackPanel>
-                    <StackPanel Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
+                    <StackPanel Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
                         <StackPanel.Resources>
                             <Style TargetType="TextBox">
                                 <Setter Property="Margin" Value="20,0,0,0"/>

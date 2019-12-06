@@ -84,8 +84,29 @@ namespace ONR
 
         private void select_FoulingPanel(object sender, SelectionChangedEventArgs e)
         {
+            /* TODO:
+             *  A read should be performed to the fouling information table here for the
+             *  bathc_field day identifier and the panel. If there is data recorded initialize organisms with that
+             *  info, other wise empty inititalization
+             */
             PanelFouling panel = FoulingPanel.SelectedItem as PanelFouling;
-            FoulingDataEntry data = new FoulingDataEntry(panel.panel_id, this.selected_batch);
+            Barnacle barnacle = new Barnacle();
+            Molluscs molluscs = new Molluscs();
+            Tubeworms tubeworms = new Tubeworms();
+            Bryozoans bryozoans = new Bryozoans();
+            Hydroids hydroids = new Hydroids();
+            Anenomes anenomes = new Anenomes();
+            Tunicates tunicates = new Tunicates();
+            Amphipods amphipods = new Amphipods();
+            Sponges sponges = new Sponges();
+            Aglae aglae = new Aglae();
+            UnknownSoft unknown = new UnknownSoft();
+            Incipient incipient = new Incipient();
+            Biofilm biofilm = new Biofilm();
+
+            FoulingDataEntry data = new FoulingDataEntry(panel.panel_id, this.selected_batch, barnacle,
+                molluscs, tubeworms, bryozoans, hydroids, anenomes, tunicates, amphipods, sponges, aglae, 
+                unknown, incipient, biofilm);
             this.Frame.Navigate(typeof(FoulingDataPage), data);
         }
     }

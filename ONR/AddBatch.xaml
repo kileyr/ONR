@@ -19,9 +19,9 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="20*"/>
+                <RowDefinition Height="15*"/>
                 <RowDefinition Height="88*"/>
-                <RowDefinition Height="20*"/>
+             
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="99*"/>
@@ -57,7 +57,13 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="24"/>
                         <RowDefinition Height="Auto"/>
-
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
                         <StackPanel.Resources>
@@ -65,7 +71,7 @@
                                 <Setter Property="Margin" Value="20,0,0,0"/>
                             </Style>
                         </StackPanel.Resources>
-                        <TextBlock Text="Batch Name" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="120" Width="Auto"/>
+                        <TextBlock Text="Batch Name" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="140" Width="Auto"/>
                         <TextBox   Name="batch_name" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
                             <TextBox.Resources>
                                 <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
@@ -80,7 +86,7 @@
                                 <Setter Property="Margin" Value="20,0,0,0"/>
                             </Style>
                         </StackPanel.Resources>
-                        <TextBlock Text="Institution ID"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="120" Width="Auto"/>
+                        <TextBlock Text="Institution ID"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="140" Width="Auto"/>
                         <TextBox   Name="institution" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
                             <TextBox.Resources>
                                 <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
@@ -95,7 +101,7 @@
                                 <Setter Property="Margin" Value="20,0,0,0"/>
                             </Style>
                         </StackPanel.Resources>
-                        <TextBlock Text="Date Recieved"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="120" Width="Auto"/>
+                        <TextBlock Text="Date Recieved"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="140" Width="Auto"/>
                         <TextBox   Name="date_recv" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
                             <TextBox.Resources>
                                 <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
@@ -106,11 +112,56 @@
                     </StackPanel>
                     <StackPanel Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
                         <StackPanel.Resources>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Margin" Value="20,0,0,0"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="Number of Coatings"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="140" Width="Auto"/>
+                        <TextBox   Name="coatings" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
+                            <TextBox.Resources>
+                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Margin" Value="20,0,0,0"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="Number of Replicates"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="140" Width="Auto"/>
+                        <TextBox   Name="rep" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
+                            <TextBox.Resources>
+                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Margin" Value="20,0,0,0"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="PI"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="140" Width="Auto"/>
+                        <TextBox   Name="p1" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
+                            <TextBox.Resources>
+                                <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                                <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                                <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="14" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
+                        <StackPanel.Resources>
                             <Style TargetType="CheckBox">
                                 <Setter Property="Margin" Value="20,0,0,0"/>
                             </Style>
                         </StackPanel.Resources>
-                        <TextBlock Text="Water Jet" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="120" Width="Auto"/>
+                        <TextBlock Text="Water Jet" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="140" Width="Auto"/>
                         <CheckBox  Name="wj_check">
                             <CheckBox.Resources>
                                 <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked" Color="#496B73" />
@@ -119,13 +170,13 @@
                             </CheckBox.Resources>
                         </CheckBox>
                     </StackPanel>
-                    <StackPanel Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
+                    <StackPanel Grid.Row="12" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
                         <StackPanel.Resources>
                             <Style TargetType="TextBox">
                                 <Setter Property="Margin" Value="20,0,0,0"/>
                             </Style>
                         </StackPanel.Resources>
-                        <TextBlock Text="Notes" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="120" Width="Auto"/>
+                        <TextBlock Text="Notes" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="140" Width="Auto"/>
                         <TextBox   Name="notes" MinWidth="450" Width="Auto" HorizontalAlignment="Left">
                             <TextBox.Resources>
                                 <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
