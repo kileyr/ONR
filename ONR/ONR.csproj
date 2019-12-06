@@ -131,6 +131,36 @@
     <Compile Include="BarnaclePage.xaml.cs">
       <DependentUpon>BarnaclePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AnenomesPage.xaml.cs">
+      <DependentUpon>AnenomesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AmphipodsPage.xaml.cs">
+      <DependentUpon>AmphipodsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AglaePage.xaml.cs">
+      <DependentUpon>AglaePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BiofilmPage.xaml.cs">
+      <DependentUpon>BiofilmPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IncipientPage.xaml.cs">
+      <DependentUpon>IncipientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnknownSoftPage.xaml.cs">
+      <DependentUpon>UnknownSoftPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpongesPage.xaml.cs">
+      <DependentUpon>SpongesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TunicatesPage.xaml.cs">
+      <DependentUpon>TunicatesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HydroidsPage.xaml.cs">
+      <DependentUpon>HydroidsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BryozoansPage.xaml.cs">
+      <DependentUpon>BryozoansPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TubewormPage.xaml.cs">
       <DependentUpon>TubewormPage.xaml</DependentUpon>
     </Compile>
@@ -203,6 +233,46 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BarnaclePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnenomesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AmphipodsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AglaePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BiofilmPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IncipientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnknownSoftPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpongesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TunicatesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HydroidsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BryozoansPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
