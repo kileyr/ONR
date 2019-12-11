@@ -15,21 +15,23 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="56*"/>
-                <RowDefinition Height="259*"/>
-                <RowDefinition Height="113*"/>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="22*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="99*"/>
                 <ColumnDefinition Width="773*"/>
                 <ColumnDefinition Width="99*"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-              <TextBlock
+                <TextBlock
                Grid.Row="0"
                Name="WJTitle"
                Text="Temp"
@@ -61,10 +63,25 @@
                         <Button Name="next_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72A;" Background="White" Click="next_psi"/>
                     </StackPanel>
                 </Grid>
-
+                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <TextBox Name="panel"  PlaceholderText="Enter or Select Panel" MinWidth="400" HorizontalAlignment="Stretch">
+                        <TextBox.Resources>
+                            <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                            <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                            <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                        </TextBox.Resources>
+                    </TextBox>
+                    <Button VerticalAlignment="Stretch" Content="Record" Click="specify_panel" MaxWidth="100" Width="Auto">
+                        <Button.Resources>
+                            <SolidColorBrush x:Key="ButtonBackground" Color="#C1D4D9"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#abc1c7" />
+                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#496B73" />
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
             </Grid>
-            <ScrollContentPresenter Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-            <ListView Name="_WJPanels_" Grid.Column="1" Grid.Row="1" SelectionChanged="select_WJPanel" ItemsSource="{x:Bind wj_panels}"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <ScrollContentPresenter Grid.Column="1" Grid.Row="1" />
+            <ListView Name="_WJPanels_" Grid.Column="1" Grid.Row="1" SelectionChanged="select_WJPanel" ItemsSource="{x:Bind wj_panels}">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>

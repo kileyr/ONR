@@ -87,5 +87,15 @@ namespace ONR
             PushDataEntry data = new PushDataEntry(panel.panel_id, this.selected_batch);
             this.Frame.Navigate(typeof(PushDataPage), data);
         }
+
+        private void specify_panel(object sender, RoutedEventArgs e)
+        {
+            string panel_id = panel.Text;
+            if (string.IsNullOrEmpty(panel_id)) { return; }
+
+            PanelPush p = new PanelPush(panel_id); 
+            PushDataEntry data = new PushDataEntry(p.panel_id, this.selected_batch);
+            this.Frame.Navigate(typeof(PushDataPage), data);
+        }
     }
 }

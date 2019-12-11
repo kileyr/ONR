@@ -8,7 +8,114 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="22*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="99*"/>
+                <ColumnDefinition Width="773*"/>
+                <ColumnDefinition Width="99*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock
+               Grid.Row="0"
+               Name="PushTitle"
+               Text="Temp"
+               FontSize="30"
+               TextAlignment="Center"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Left"
+            />
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <TextBox Name="panel"  PlaceholderText="Enter or Select Panel" MinWidth="400" HorizontalAlignment="Stretch">
+                        <TextBox.Resources>
+                            <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#496B73"/>
+                            <SolidColorBrush x:Key="TextControlButtonBackgroundPressed" Color="#496B73" />
+                            <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="#496B73" />
+                        </TextBox.Resources>
+                    </TextBox>
+                    <Button VerticalAlignment="Stretch" Content="Record" Click="specify_panel" MaxWidth="100" Width="Auto">
+                        <Button.Resources>
+                            <SolidColorBrush x:Key="ButtonBackground" Color="#C1D4D9"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#abc1c7" />
+                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#496B73" />
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <ScrollContentPresenter Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            <ListView Name="_PushPanels_" Grid.Column="1" Grid.Row="1" SelectionChanged="select_PushPanel" ItemsSource="{x:Bind push_panels}"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.Resources>
+                    <SolidColorBrush x:Key="ListViewItemBackground" Color="#F0F0F0" />
+                    <SolidColorBrush x:Key="ListViewItemBackgroundSelectedPointerOver" Color="#A4B5BA" />
+                    <SolidColorBrush x:Key="ListViewItemBackgroundPressed" Color="#C1D4D9" />
+                    <SolidColorBrush x:Key="ListViewItemBackgroundSelected" Color="#C1D4D9" />
+                    <SolidColorBrush x:Key="ListViewItemBackgroundSelectedPressed" Color="#C1D4D9" />
+                    <SolidColorBrush x:Key="ListViewItemBackgroundPointerOver" Color="#D3D3D3" />
+                </ListView.Resources>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:PanelPush">
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="82*"/>
+                                <ColumnDefinition Width="82*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{x:Bind panel_id}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <SymbolIcon Grid.Column="1" Name="status_icon" Symbol="Edit" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <CommandBar Background="#011826" Foreground="White" Height="76" Grid.RowSpan="2" DefaultLabelPosition="Right">
+            <CommandBar.Resources>
+                <SolidColorBrush x:Key="AppBarButtonForegroundPointerOver" Color="#C1D4D9"/>
+                <SolidColorBrush x:Key="AppBarButtonBackgroundPointerOver" Color="#707070" />
+                <SolidColorBrush x:Key="AppBarButtonForegroundPressed" Color="#C1D4D9"/>
+                <SolidColorBrush x:Key="AppBarButtonBackgroundPressed" Color="#707070" />
+                <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPointerOver" Color="#C1D4D9" />
+                <SolidColorBrush x:Key="AppBarEllipsisButtonForegroundPressed" Color="#C1D4D9" />
+            </CommandBar.Resources>
+            <AppBarButton Icon ="Edit" Click="to_fouling" IsCompact="false" Foreground="White" Label="Fouling"/>
+            <AppBarButton Icon ="Edit" Click="to_waterjet" IsCompact="false" Foreground="White" Label="Water Jet"/>
+            <AppBarButton Icon ="Edit" Click="to_push" IsCompact="false" Foreground="White" Label="Push"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Batches" Click ="nav_to_BatchHome"/>
+            </CommandBar.SecondaryCommands>
+            <CommandBar.Content>
+                <TextBlock Grid.Column="0"
+               Grid.Row="0"
+               Text="  ONR"
+               Foreground="White"
+               FontSize="28"
+               TextAlignment="Center"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"/>
+            </CommandBar.Content>
+        </CommandBar>
+    </Grid>
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="29*"/>
@@ -89,5 +196,5 @@
                VerticalAlignment="Bottom"/>
             </CommandBar.Content>
         </CommandBar>
-    </Grid>
+    </Grid>-->
 </Page>
